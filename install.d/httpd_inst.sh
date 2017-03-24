@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "#################### HTTPD BEGIN ####################"
 if [ -z $AIU ]; then
   AIU=$(dirname $(cd `dirname $0`; pwd))
 fi
@@ -11,29 +12,26 @@ fi
 cd $DEST
 is_installed httpd
 is_ok
-cd $SRC
 
 # requirements
 echo "#################### Checking Requirements ####################"
 $AIU/install.d/apr_inst.sh
 $AIU/install.d/apr-util_inst.sh
 $AIU/install.d/pcre_inst.sh
-apt-get -y update
-apt-get -y dist-upgrade
-apt-get -y install autoconf
-is_ok
+apt_install autoconf
 APR_SRC=`cat $AIU/install.conf | grep -w apr_src | cut -d "=" -f 2`
+is_dir_exist $APR_SRC
 APR_UTIL_SRC=`cat $AIU/install.conf | grep -w apr-util_src | cut -d "=" -f 2`
-is_ok
+is_dir_exist $APR_UTIL_SRC
 
+cd $SRC
 pre_install httpd
 is_ok
 HTTPD_SRC=$SRCDIR
 HTTPD_DEST=$DEST/httpd
-echo $APR_UTIL_SRC
+cd $HTTPD_SRC
 
 echo "#################### Installing $HTTPD_SRC ####################"
-cd $HTTPD_SRC
 ./buildconf \
 --with-apr=$APR_SRC \
 --with-apr-util=$APR_UTIL_SRC
@@ -49,9 +47,9 @@ is_ok
 --enable-maintainer-mode
 is_ok
 make
-make install
+is_ok
+make install &>$AIU/install.d/log/httpd_make_install.log
 is_ok
 make clean
 save_pkg_dest httpd
-is_ok
-echo "#################### Completing $HTTPD_SRC ####################"
+echo "#################### HTTPD END ####################"

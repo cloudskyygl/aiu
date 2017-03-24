@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "#################### APR-Util BEGIN ####################"
+
 if [ -z $AIU ]; then
   AIU=$(dirname $(cd `dirname $0`; pwd))
 fi
@@ -26,8 +28,8 @@ echo "#################### Install $APR_UTIL_SRC ####################"
 --with-apr="$DEST"/apr
 is_ok
 make
-make install
+make install &>$AIU/install.d/log/apr-util_make_install.log
 is_ok
 save_pkg_dest apr-util
 is_ok
-echo "#################### Completing $APR_UTIL_SRC ####################"
+echo "#################### APR-Util END ####################"

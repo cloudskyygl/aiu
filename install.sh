@@ -7,7 +7,19 @@ export PATH
 # set base directory AIU
  export AIU=$(cd `dirname $0`; pwd)
 
-$AIU/install.d/install_apr.sh
+$AIU/install.d/vim_inst.sh
+$AIU/install.d/httpd_inst.sh
+
+
+
+
+
+
+
+
+
+
+
 
 # if [ -d "$AIU"/install.d ]; then
 #   for i in "$AIU"/install.d/*.sh; do

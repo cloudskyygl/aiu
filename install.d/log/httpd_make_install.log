@@ -1,0 +1,380 @@
+Making install in srclib
+make[1]: Entering directory '/home/steven/src1/httpd-2.4.25/srclib'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/srclib'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/srclib'
+make[1]: Leaving directory '/home/steven/src1/httpd-2.4.25/srclib'
+Making install in os
+make[1]: Entering directory '/home/steven/src1/httpd-2.4.25/os'
+Making install in unix
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/os/unix'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/os/unix'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/os/unix'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/os/unix'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/os'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/os'
+make[1]: Leaving directory '/home/steven/src1/httpd-2.4.25/os'
+Making install in server
+make[1]: Entering directory '/home/steven/src1/httpd-2.4.25/server'
+Making install in mpm
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/server/mpm'
+Making install in event
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/server/mpm/event'
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/server/mpm/event'
+mkdir /home/steven/dest1/httpd
+mkdir /home/steven/dest1/httpd/modules
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/server/mpm/event'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/server/mpm/event'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/server/mpm'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/server/mpm'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/server/mpm'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/server'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/server'
+make[1]: Leaving directory '/home/steven/src1/httpd-2.4.25/server'
+Making install in modules
+make[1]: Entering directory '/home/steven/src1/httpd-2.4.25/modules'
+Making install in aaa
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authn_file.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authn_dbm.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authn_anon.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authn_dbd.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authn_socache.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authn_core.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authz_host.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authz_groupfile.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authz_user.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authz_dbm.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authz_owner.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authz_dbd.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_authz_core.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_access_compat.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_auth_basic.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_auth_form.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_auth_digest.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_allowmethods.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+Making install in cache
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_file_cache.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_cache.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_cache_disk.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_cache_socache.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_socache_shmcb.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_socache_dbm.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_socache_memcache.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+Making install in core
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/core'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/core'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_watchdog.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_macro.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/core'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/core'
+Making install in database
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/database'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/database'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_dbd.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/database'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/database'
+Making install in debugging
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_bucketeer.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_dumpio.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+Making install in filters
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_buffer.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_ratelimit.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_reqtimeout.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_ext_filter.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_request.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_include.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_filter.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_substitute.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_sed.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_deflate.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+Making install in http
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/http'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/http'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_mime.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/http'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/http'
+Making install in loggers
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_log_config.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_log_debug.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_logio.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+Making install in metadata
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_env.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_expires.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_headers.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_unique_id.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_setenvif.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_version.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_remoteip.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+Making install in proxy
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_connect.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_ftp.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_http.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_fcgi.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_scgi.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_fdpass.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_wstunnel.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_ajp.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_balancer.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_express.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_proxy_hcheck.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+Making install in session
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/session'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/session'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_session.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_session_cookie.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_session_dbd.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/session'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/session'
+Making install in slotmem
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_slotmem_shm.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+Making install in ssl
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_ssl.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+Making install in proxy/balancers
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_lbmethod_byrequests.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_lbmethod_bytraffic.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_lbmethod_bybusyness.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_lbmethod_heartbeat.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+Making install in arch/unix
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_unixd.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+Making install in dav/main
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_dav.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+Making install in generators
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_status.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_autoindex.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_info.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_cgid.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+Making install in dav/fs
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_dav_fs.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+Making install in mappers
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_vhost_alias.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_negotiation.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_dir.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_actions.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_speling.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_userdir.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_alias.la /home/steven/dest1/httpd/modules/
+/home/steven/dest1/apr/build-1/libtool --silent --mode=install install mod_rewrite.la /home/steven/dest1/httpd/modules/
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules'
+make[1]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules'
+Making install in support
+make[1]: Entering directory '/home/steven/src1/httpd-2.4.25/support'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/support'
+mkdir /home/steven/dest1/httpd/bin
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/support'
+make[1]: Leaving directory '/home/steven/src1/httpd-2.4.25/support'
+make[1]: Entering directory '/home/steven/src1/httpd-2.4.25'
+
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/os'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/os/unix'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/os/unix'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/os'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/server'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/server/mpm'
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/server/mpm/event'
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/server/mpm/event'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/server/mpm'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/server'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/modules'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+Building shared: mod_authn_file.la mod_authn_dbm.la mod_authn_anon.la mod_authn_dbd.la mod_authn_socache.la mod_authn_core.la mod_authz_host.la mod_authz_groupfile.la mod_authz_user.la mod_authz_dbm.la mod_authz_owner.la mod_authz_dbd.la mod_authz_core.la mod_access_compat.la mod_auth_basic.la mod_auth_form.la mod_auth_digest.la mod_allowmethods.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/aaa'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+Building shared: mod_file_cache.la mod_cache.la mod_cache_disk.la mod_cache_socache.la mod_socache_shmcb.la mod_socache_dbm.la mod_socache_memcache.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/cache'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/core'
+Building shared: mod_watchdog.la mod_macro.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/core'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/core'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/core'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/database'
+Building shared: mod_dbd.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/database'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/database'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/database'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+Building shared: mod_bucketeer.la mod_dumpio.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/debugging'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+Building shared: mod_buffer.la mod_ratelimit.la mod_reqtimeout.la mod_ext_filter.la mod_request.la mod_include.la mod_filter.la mod_substitute.la mod_sed.la mod_deflate.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/filters'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/http'
+Building shared: mod_mime.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/http'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/http'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/http'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+Building shared: mod_log_config.la mod_log_debug.la mod_logio.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/loggers'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+Building shared: mod_env.la mod_expires.la mod_headers.la mod_unique_id.la mod_setenvif.la mod_version.la mod_remoteip.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/metadata'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+Building shared: mod_proxy.la mod_proxy_connect.la mod_proxy_ftp.la mod_proxy_http.la mod_proxy_fcgi.la mod_proxy_scgi.la mod_proxy_fdpass.la mod_proxy_wstunnel.la mod_proxy_ajp.la mod_proxy_balancer.la mod_proxy_express.la mod_proxy_hcheck.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/session'
+Building shared: mod_session.la mod_session_cookie.la mod_session_dbd.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/session'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/session'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/session'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+Building shared: mod_slotmem_shm.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/slotmem'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+Building shared: mod_ssl.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/ssl'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+Building shared: mod_lbmethod_byrequests.la mod_lbmethod_bytraffic.la mod_lbmethod_bybusyness.la mod_lbmethod_heartbeat.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/proxy/balancers'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+Building shared: mod_unixd.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/arch/unix'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+Building shared: mod_dav.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/main'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+Building shared: mod_status.la mod_autoindex.la mod_info.la mod_cgid.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/generators'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+Building shared: mod_dav_fs.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/dav/fs'
+make[3]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+Building shared: mod_vhost_alias.la mod_negotiation.la mod_dir.la mod_actions.la mod_speling.la mod_userdir.la mod_alias.la mod_rewrite.la
+make[4]: Entering directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+make[4]: Nothing to be done for 'local-shared-build'.
+make[4]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+make[3]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules/mappers'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/modules'
+make[2]: Entering directory '/home/steven/src1/httpd-2.4.25/support'
+make[2]: Leaving directory '/home/steven/src1/httpd-2.4.25/support'
+
+Installing configuration files
+mkdir /home/steven/dest1/httpd/conf
+mkdir /home/steven/dest1/httpd/conf/extra
+mkdir /home/steven/dest1/httpd/conf/original
+mkdir /home/steven/dest1/httpd/conf/original/extra
+Installing HTML documents
+mkdir /home/steven/dest1/httpd/htdocs
+Installing error documents
+mkdir /home/steven/dest1/httpd/error
+Installing icons
+mkdir /home/steven/dest1/httpd/icons
+mkdir /home/steven/dest1/httpd/logs
+Installing CGIs
+mkdir /home/steven/dest1/httpd/cgi-bin
+Installing header files
+mkdir /home/steven/dest1/httpd/include
+Installing build system files
+mkdir /home/steven/dest1/httpd/build
+Installing man pages and online manual
+mkdir /home/steven/dest1/httpd/man
+mkdir /home/steven/dest1/httpd/man/man1
+mkdir /home/steven/dest1/httpd/man/man8
+mkdir /home/steven/dest1/httpd/manual
+make[1]: Leaving directory '/home/steven/src1/httpd-2.4.25'

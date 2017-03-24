@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "#################### PCRE BEGIN ####################"
+
 if [ -z $AIU ]; then
   AIU=$(dirname $(cd `dirname $0`; pwd))
 fi
@@ -25,8 +27,8 @@ echo "#################### Install $PCRE_SRC ####################"
 ./configure --prefix="$PCRE_DEST"
 is_ok
 make
-make install
+make install &>$AIU/install.d/log/pcre_make_install.log
 is_ok
 save_pkg_dest pcre
 is_ok
-echo "#################### Completing $PCRE_SRC ####################"
+echo "#################### PCRE END ####################"
