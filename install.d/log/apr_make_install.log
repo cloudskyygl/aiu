@@ -1,31 +1,31 @@
-make[1]: Entering directory '/home/steven/src2/apr-1.5.2'
+make[1]: Entering directory '/home/steven/src/apr-1.5.2'
 make[1]: Nothing to be done for 'local-all'.
-make[1]: Leaving directory '/home/steven/src2/apr-1.5.2'
-/home/steven/src2/apr-1.5.2/build/mkdir.sh /home/steven/dest2/apr/lib /home/steven/dest2/apr/bin /home/steven/dest2/apr/build-1 \
-	     /home/steven/dest2/apr/lib/pkgconfig /home/steven/dest2/apr/include/apr-1
-mkdir /home/steven/dest2/apr
-mkdir /home/steven/dest2/apr/lib
-mkdir /home/steven/dest2/apr/bin
-mkdir /home/steven/dest2/apr/build-1
-mkdir /home/steven/dest2/apr/lib/pkgconfig
-mkdir /home/steven/dest2/apr/include
-mkdir /home/steven/dest2/apr/include/apr-1
-/usr/bin/install -c -m 644 /home/steven/src2/apr-1.5.2/include/apr.h /home/steven/dest2/apr/include/apr-1
-for f in /home/steven/src2/apr-1.5.2/include/apr_*.h; do \
-    /usr/bin/install -c -m 644 ${f} /home/steven/dest2/apr/include/apr-1; \
+make[1]: Leaving directory '/home/steven/src/apr-1.5.2'
+/home/steven/src/apr-1.5.2/build/mkdir.sh /home/steven/dest/apr/lib /home/steven/dest/apr/bin /home/steven/dest/apr/build-1 \
+	     /home/steven/dest/apr/lib/pkgconfig /home/steven/dest/apr/include/apr-1
+mkdir /home/steven/dest/apr
+mkdir /home/steven/dest/apr/lib
+mkdir /home/steven/dest/apr/bin
+mkdir /home/steven/dest/apr/build-1
+mkdir /home/steven/dest/apr/lib/pkgconfig
+mkdir /home/steven/dest/apr/include
+mkdir /home/steven/dest/apr/include/apr-1
+/usr/bin/install -c -m 644 /home/steven/src/apr-1.5.2/include/apr.h /home/steven/dest/apr/include/apr-1
+for f in /home/steven/src/apr-1.5.2/include/apr_*.h; do \
+    /usr/bin/install -c -m 644 ${f} /home/steven/dest/apr/include/apr-1; \
 done
-/bin/bash /home/steven/src2/apr-1.5.2/libtool --mode=install /usr/bin/install -c -m 755 libapr-1.la /home/steven/dest2/apr/lib
-libtool: install: /usr/bin/install -c -m 755 .libs/libapr-1.so.0.5.2 /home/steven/dest2/apr/lib/libapr-1.so.0.5.2
-libtool: install: (cd /home/steven/dest2/apr/lib && { ln -s -f libapr-1.so.0.5.2 libapr-1.so.0 || { rm -f libapr-1.so.0 && ln -s libapr-1.so.0.5.2 libapr-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/apr/lib && { ln -s -f libapr-1.so.0.5.2 libapr-1.so || { rm -f libapr-1.so && ln -s libapr-1.so.0.5.2 libapr-1.so; }; })
-libtool: install: /usr/bin/install -c -m 755 .libs/libapr-1.lai /home/steven/dest2/apr/lib/libapr-1.la
-libtool: install: /usr/bin/install -c -m 755 .libs/libapr-1.a /home/steven/dest2/apr/lib/libapr-1.a
-libtool: install: chmod 644 /home/steven/dest2/apr/lib/libapr-1.a
-libtool: install: ranlib /home/steven/dest2/apr/lib/libapr-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/apr/lib
+/bin/bash /home/steven/src/apr-1.5.2/libtool --mode=install /usr/bin/install -c -m 755 libapr-1.la /home/steven/dest/apr/lib
+libtool: install: /usr/bin/install -c -m 755 .libs/libapr-1.so.0.5.2 /home/steven/dest/apr/lib/libapr-1.so.0.5.2
+libtool: install: (cd /home/steven/dest/apr/lib && { ln -s -f libapr-1.so.0.5.2 libapr-1.so.0 || { rm -f libapr-1.so.0 && ln -s libapr-1.so.0.5.2 libapr-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/apr/lib && { ln -s -f libapr-1.so.0.5.2 libapr-1.so || { rm -f libapr-1.so && ln -s libapr-1.so.0.5.2 libapr-1.so; }; })
+libtool: install: /usr/bin/install -c -m 755 .libs/libapr-1.lai /home/steven/dest/apr/lib/libapr-1.la
+libtool: install: /usr/bin/install -c -m 755 .libs/libapr-1.a /home/steven/dest/apr/lib/libapr-1.a
+libtool: install: chmod 644 /home/steven/dest/apr/lib/libapr-1.a
+libtool: install: ranlib /home/steven/dest/apr/lib/libapr-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/apr/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/apr/lib
+   /home/steven/dest/apr/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -41,14 +41,14 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 apr.exp /home/steven/dest2/apr/lib/apr.exp
-/usr/bin/install -c -m 644 apr.pc /home/steven/dest2/apr/lib/pkgconfig/apr-1.pc
+/usr/bin/install -c -m 644 apr.exp /home/steven/dest/apr/lib/apr.exp
+/usr/bin/install -c -m 644 apr.pc /home/steven/dest/apr/lib/pkgconfig/apr-1.pc
 for f in libtool shlibtool; do \
-    if test -f ${f}; then /usr/bin/install -c -m 755 ${f} /home/steven/dest2/apr/build-1; fi; \
+    if test -f ${f}; then /usr/bin/install -c -m 755 ${f} /home/steven/dest/apr/build-1; fi; \
 done
-/usr/bin/install -c -m 755 /home/steven/src2/apr-1.5.2/build/mkdir.sh /home/steven/dest2/apr/build-1
+/usr/bin/install -c -m 755 /home/steven/src/apr-1.5.2/build/mkdir.sh /home/steven/dest/apr/build-1
 for f in make_exports.awk make_var_export.awk; do \
-    /usr/bin/install -c -m 644 /home/steven/src2/apr-1.5.2/build/${f} /home/steven/dest2/apr/build-1; \
+    /usr/bin/install -c -m 644 /home/steven/src/apr-1.5.2/build/${f} /home/steven/dest/apr/build-1; \
 done
-/usr/bin/install -c -m 644 build/apr_rules.out /home/steven/dest2/apr/build-1/apr_rules.mk
-/usr/bin/install -c -m 755 apr-config.out /home/steven/dest2/apr/bin/apr-1-config
+/usr/bin/install -c -m 644 build/apr_rules.out /home/steven/dest/apr/build-1/apr_rules.mk
+/usr/bin/install -c -m 755 apr-config.out /home/steven/dest/apr/bin/apr-1-config

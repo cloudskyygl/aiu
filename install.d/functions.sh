@@ -145,6 +145,7 @@ function pre_install() {
     if [ -d $dir ]; then
       SRCDIR=$dir
       echo "## $getfile extracted to directory '$SRCDIR'"
+      unset getfile
       r=`cat $AIU/install.conf | grep ^$1_src=`
       if [ -z $r ]; then
         sed -i "/^# PKG_SRC$/a $1_src=$SRC/$SRCDIR" $AIU/install.conf
@@ -154,7 +155,6 @@ function pre_install() {
     fi
   done
   unset dir
-  unset getfile
 
   echo "## ERROR: $1 source archive not found, or extracting error"
   exit

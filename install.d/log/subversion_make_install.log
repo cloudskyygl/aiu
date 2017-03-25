@@ -1,16 +1,16 @@
-/usr/bin/install -c -d /home/steven/dest2/subversion/lib /home/steven/dest2/subversion/share/pkgconfig
-cd subversion/libsvn_subr ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_subr-1.la /home/steven/dest2/subversion/lib/libsvn_subr-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_subr-1.so.0.0.0 /home/steven/dest2/subversion/lib/libsvn_subr-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_subr-1.so.0.0.0 libsvn_subr-1.so.0 || { rm -f libsvn_subr-1.so.0 && ln -s libsvn_subr-1.so.0.0.0 libsvn_subr-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_subr-1.so.0.0.0 libsvn_subr-1.so || { rm -f libsvn_subr-1.so && ln -s libsvn_subr-1.so.0.0.0 libsvn_subr-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_subr-1.lai /home/steven/dest2/subversion/lib/libsvn_subr-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_subr-1.a /home/steven/dest2/subversion/lib/libsvn_subr-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_subr-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_subr-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+/usr/bin/install -c -d /home/steven/dest/subversion/lib /home/steven/dest/subversion/share/pkgconfig
+cd subversion/libsvn_subr ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_subr-1.la /home/steven/dest/subversion/lib/libsvn_subr-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_subr-1.so.0.0.0 /home/steven/dest/subversion/lib/libsvn_subr-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_subr-1.so.0.0.0 libsvn_subr-1.so.0 || { rm -f libsvn_subr-1.so.0 && ln -s libsvn_subr-1.so.0.0.0 libsvn_subr-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_subr-1.so.0.0.0 libsvn_subr-1.so || { rm -f libsvn_subr-1.so && ln -s libsvn_subr-1.so.0.0.0 libsvn_subr-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_subr-1.lai /home/steven/dest/subversion/lib/libsvn_subr-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_subr-1.a /home/steven/dest/subversion/lib/libsvn_subr-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_subr-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_subr-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -26,21 +26,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_subr/libsvn_subr.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_subr.pc
-cd subversion/libsvn_delta ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_delta-1.la /home/steven/dest2/subversion/lib/libsvn_delta-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_subr/libsvn_subr.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_subr.pc
+cd subversion/libsvn_delta ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_delta-1.la /home/steven/dest/subversion/lib/libsvn_delta-1.la
 libtool: warning: relinking 'libsvn_delta-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_delta; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_delta-1.la cancel.lo compat.lo compose_delta.lo debug_editor.lo default_editor.lo deprecated.lo depth_filter_editor.lo editor.lo path_driver.lo svndiff.lo text_delta.lo version.lo xdelta.lo ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 -lz )
-libtool: install: /usr/bin/install -c .libs/libsvn_delta-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_delta-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_delta-1.so.0.0.0 libsvn_delta-1.so.0 || { rm -f libsvn_delta-1.so.0 && ln -s libsvn_delta-1.so.0.0.0 libsvn_delta-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_delta-1.so.0.0.0 libsvn_delta-1.so || { rm -f libsvn_delta-1.so && ln -s libsvn_delta-1.so.0.0.0 libsvn_delta-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_delta-1.lai /home/steven/dest2/subversion/lib/libsvn_delta-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_delta-1.a /home/steven/dest2/subversion/lib/libsvn_delta-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_delta-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_delta-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_delta; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_delta-1.la cancel.lo compat.lo compose_delta.lo debug_editor.lo default_editor.lo deprecated.lo depth_filter_editor.lo editor.lo path_driver.lo svndiff.lo text_delta.lo version.lo xdelta.lo ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 -lz )
+libtool: install: /usr/bin/install -c .libs/libsvn_delta-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_delta-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_delta-1.so.0.0.0 libsvn_delta-1.so.0 || { rm -f libsvn_delta-1.so.0 && ln -s libsvn_delta-1.so.0.0.0 libsvn_delta-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_delta-1.so.0.0.0 libsvn_delta-1.so || { rm -f libsvn_delta-1.so && ln -s libsvn_delta-1.so.0.0.0 libsvn_delta-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_delta-1.lai /home/steven/dest/subversion/lib/libsvn_delta-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_delta-1.a /home/steven/dest/subversion/lib/libsvn_delta-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_delta-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_delta-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -56,21 +56,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_delta/libsvn_delta.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_delta.pc
-cd subversion/libsvn_fs_util ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs_util-1.la /home/steven/dest2/subversion/lib/libsvn_fs_util-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_delta/libsvn_delta.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_delta.pc
+cd subversion/libsvn_fs_util ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs_util-1.la /home/steven/dest/subversion/lib/libsvn_fs_util-1.la
 libtool: warning: relinking 'libsvn_fs_util-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_fs_util; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_fs_util-1.la fs-util.lo ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_util-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_fs_util-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so.0 || { rm -f libsvn_fs_util-1.so.0 && ln -s libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so || { rm -f libsvn_fs_util-1.so && ln -s libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_util-1.lai /home/steven/dest2/subversion/lib/libsvn_fs_util-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_util-1.a /home/steven/dest2/subversion/lib/libsvn_fs_util-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_fs_util-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_fs_util-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_fs_util; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_fs_util-1.la fs-util.lo ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_util-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_fs_util-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so.0 || { rm -f libsvn_fs_util-1.so.0 && ln -s libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so || { rm -f libsvn_fs_util-1.so && ln -s libsvn_fs_util-1.so.0.0.0 libsvn_fs_util-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_util-1.lai /home/steven/dest/subversion/lib/libsvn_fs_util-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_util-1.a /home/steven/dest/subversion/lib/libsvn_fs_util-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_fs_util-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_fs_util-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -86,21 +86,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_fs_util/libsvn_fs_util.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_fs_util.pc
-cd subversion/libsvn_fs_fs ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs_fs-1.la /home/steven/dest2/subversion/lib/libsvn_fs_fs-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_fs_util/libsvn_fs_util.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_fs_util.pc
+cd subversion/libsvn_fs_fs ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs_fs-1.la /home/steven/dest/subversion/lib/libsvn_fs_fs-1.la
 libtool: warning: relinking 'libsvn_fs_fs-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_fs_fs; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_fs_fs-1.la cached_data.lo caching.lo dag.lo dump-index.lo fs.lo fs_fs.lo hotcopy.lo id.lo index.lo load-index.lo lock.lo low_level.lo pack.lo recovery.lo rep-cache.lo rev_file.lo revprops.lo stats.lo temp_serializer.lo transaction.lo tree.lo util.lo verify.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la )
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_fs-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_fs_fs-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so.0 || { rm -f libsvn_fs_fs-1.so.0 && ln -s libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so || { rm -f libsvn_fs_fs-1.so && ln -s libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_fs-1.lai /home/steven/dest2/subversion/lib/libsvn_fs_fs-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_fs-1.a /home/steven/dest2/subversion/lib/libsvn_fs_fs-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_fs_fs-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_fs_fs-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_fs_fs; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_fs_fs-1.la cached_data.lo caching.lo dag.lo dump-index.lo fs.lo fs_fs.lo hotcopy.lo id.lo index.lo load-index.lo lock.lo low_level.lo pack.lo recovery.lo rep-cache.lo rev_file.lo revprops.lo stats.lo temp_serializer.lo transaction.lo tree.lo util.lo verify.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la )
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_fs-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_fs_fs-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so.0 || { rm -f libsvn_fs_fs-1.so.0 && ln -s libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so || { rm -f libsvn_fs_fs-1.so && ln -s libsvn_fs_fs-1.so.0.0.0 libsvn_fs_fs-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_fs-1.lai /home/steven/dest/subversion/lib/libsvn_fs_fs-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_fs-1.a /home/steven/dest/subversion/lib/libsvn_fs_fs-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_fs_fs-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_fs_fs-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -116,21 +116,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_fs_fs/libsvn_fs_fs.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_fs_fs.pc
-cd subversion/libsvn_fs_x ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs_x-1.la /home/steven/dest2/subversion/lib/libsvn_fs_x-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_fs_fs/libsvn_fs_fs.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_fs_fs.pc
+cd subversion/libsvn_fs_x ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs_x-1.la /home/steven/dest/subversion/lib/libsvn_fs_x-1.la
 libtool: warning: relinking 'libsvn_fs_x-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_fs_x; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -o libsvn_fs_x-1.la cached_data.lo caching.lo changes.lo dag.lo fs.lo fs_id.lo fs_x.lo hotcopy.lo id.lo index.lo lock.lo low_level.lo noderevs.lo pack.lo recovery.lo rep-cache.lo reps.lo rev_file.lo revprops.lo string_table.lo temp_serializer.lo transaction.lo tree.lo util.lo verify.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la )
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_x-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_fs_x-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so.0 || { rm -f libsvn_fs_x-1.so.0 && ln -s libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so || { rm -f libsvn_fs_x-1.so && ln -s libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_x-1.lai /home/steven/dest2/subversion/lib/libsvn_fs_x-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_fs_x-1.a /home/steven/dest2/subversion/lib/libsvn_fs_x-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_fs_x-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_fs_x-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_fs_x; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -o libsvn_fs_x-1.la cached_data.lo caching.lo changes.lo dag.lo fs.lo fs_id.lo fs_x.lo hotcopy.lo id.lo index.lo lock.lo low_level.lo noderevs.lo pack.lo recovery.lo rep-cache.lo reps.lo rev_file.lo revprops.lo string_table.lo temp_serializer.lo transaction.lo tree.lo util.lo verify.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la )
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_x-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_fs_x-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so.0 || { rm -f libsvn_fs_x-1.so.0 && ln -s libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so || { rm -f libsvn_fs_x-1.so && ln -s libsvn_fs_x-1.so.0.0.0 libsvn_fs_x-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_x-1.lai /home/steven/dest/subversion/lib/libsvn_fs_x-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_fs_x-1.a /home/steven/dest/subversion/lib/libsvn_fs_x-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_fs_x-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_fs_x-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -146,22 +146,22 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_fs_x/libsvn_fs_x.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_fs_x.pc
-/usr/bin/install -c -d /home/steven/dest2/subversion/lib /home/steven/dest2/subversion/share/pkgconfig
-cd subversion/libsvn_fs ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs-1.la /home/steven/dest2/subversion/lib/libsvn_fs-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_fs_x/libsvn_fs_x.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_fs_x.pc
+/usr/bin/install -c -d /home/steven/dest/subversion/lib /home/steven/dest/subversion/share/pkgconfig
+cd subversion/libsvn_fs ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_fs-1.la /home/steven/dest/subversion/lib/libsvn_fs-1.la
 libtool: warning: relinking 'libsvn_fs-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_fs; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_fs-1.la access.lo deprecated.lo editor.lo fs-loader.lo ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_fs_fs/libsvn_fs_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la ../../subversion/libsvn_fs_x/libsvn_fs_x-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_fs-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_fs-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs-1.so.0.0.0 libsvn_fs-1.so.0 || { rm -f libsvn_fs-1.so.0 && ln -s libsvn_fs-1.so.0.0.0 libsvn_fs-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_fs-1.so.0.0.0 libsvn_fs-1.so || { rm -f libsvn_fs-1.so && ln -s libsvn_fs-1.so.0.0.0 libsvn_fs-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_fs-1.lai /home/steven/dest2/subversion/lib/libsvn_fs-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_fs-1.a /home/steven/dest2/subversion/lib/libsvn_fs-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_fs-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_fs-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_fs; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_fs-1.la access.lo deprecated.lo editor.lo fs-loader.lo ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_fs_fs/libsvn_fs_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la ../../subversion/libsvn_fs_x/libsvn_fs_x-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_fs_util/libsvn_fs_util-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_fs-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_fs-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs-1.so.0.0.0 libsvn_fs-1.so.0 || { rm -f libsvn_fs-1.so.0 && ln -s libsvn_fs-1.so.0.0.0 libsvn_fs-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_fs-1.so.0.0.0 libsvn_fs-1.so || { rm -f libsvn_fs-1.so && ln -s libsvn_fs-1.so.0.0.0 libsvn_fs-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_fs-1.lai /home/steven/dest/subversion/lib/libsvn_fs-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_fs-1.a /home/steven/dest/subversion/lib/libsvn_fs-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_fs-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_fs-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -177,21 +177,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_fs/libsvn_fs.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_fs.pc
-cd subversion/libsvn_ra_svn ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_ra_svn-1.la /home/steven/dest2/subversion/lib/libsvn_ra_svn-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_fs/libsvn_fs.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_fs.pc
+cd subversion/libsvn_ra_svn ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_ra_svn-1.la /home/steven/dest/subversion/lib/libsvn_ra_svn-1.la
 libtool: warning: relinking 'libsvn_ra_svn-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_ra_svn; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_ra_svn-1.la client.lo cram.lo cyrus_auth.lo deprecated.lo editorp.lo internal_auth.lo marshal.lo streams.lo version.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_ra_svn-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_ra_svn-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so.0 || { rm -f libsvn_ra_svn-1.so.0 && ln -s libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so || { rm -f libsvn_ra_svn-1.so && ln -s libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_ra_svn-1.lai /home/steven/dest2/subversion/lib/libsvn_ra_svn-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_ra_svn-1.a /home/steven/dest2/subversion/lib/libsvn_ra_svn-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_ra_svn-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_ra_svn-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_ra_svn; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_ra_svn-1.la client.lo cram.lo cyrus_auth.lo deprecated.lo editorp.lo internal_auth.lo marshal.lo streams.lo version.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_ra_svn-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_ra_svn-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so.0 || { rm -f libsvn_ra_svn-1.so.0 && ln -s libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so || { rm -f libsvn_ra_svn-1.so && ln -s libsvn_ra_svn-1.so.0.0.0 libsvn_ra_svn-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_ra_svn-1.lai /home/steven/dest/subversion/lib/libsvn_ra_svn-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_ra_svn-1.a /home/steven/dest/subversion/lib/libsvn_ra_svn-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_ra_svn-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_ra_svn-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -207,21 +207,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_ra_svn/libsvn_ra_svn.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_ra_svn.pc
-cd subversion/libsvn_repos ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_repos-1.la /home/steven/dest2/subversion/lib/libsvn_repos-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_ra_svn/libsvn_ra_svn.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_ra_svn.pc
+cd subversion/libsvn_repos ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_repos-1.la /home/steven/dest/subversion/lib/libsvn_repos-1.la
 libtool: warning: relinking 'libsvn_repos-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_repos; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_repos-1.la authz.lo authz_pool.lo commit.lo config_pool.lo delta.lo deprecated.lo dump.lo fs-wrap.lo hooks.lo load-fs-vtable.lo load.lo log.lo node_tree.lo notify.lo replay.lo reporter.lo repos.lo rev_hunt.lo ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_repos-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_repos-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_repos-1.so.0.0.0 libsvn_repos-1.so.0 || { rm -f libsvn_repos-1.so.0 && ln -s libsvn_repos-1.so.0.0.0 libsvn_repos-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_repos-1.so.0.0.0 libsvn_repos-1.so || { rm -f libsvn_repos-1.so && ln -s libsvn_repos-1.so.0.0.0 libsvn_repos-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_repos-1.lai /home/steven/dest2/subversion/lib/libsvn_repos-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_repos-1.a /home/steven/dest2/subversion/lib/libsvn_repos-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_repos-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_repos-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_repos; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_repos-1.la authz.lo authz_pool.lo commit.lo config_pool.lo delta.lo deprecated.lo dump.lo fs-wrap.lo hooks.lo load-fs-vtable.lo load.lo log.lo node_tree.lo notify.lo replay.lo reporter.lo repos.lo rev_hunt.lo ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_repos-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_repos-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_repos-1.so.0.0.0 libsvn_repos-1.so.0 || { rm -f libsvn_repos-1.so.0 && ln -s libsvn_repos-1.so.0.0.0 libsvn_repos-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_repos-1.so.0.0.0 libsvn_repos-1.so || { rm -f libsvn_repos-1.so && ln -s libsvn_repos-1.so.0.0.0 libsvn_repos-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_repos-1.lai /home/steven/dest/subversion/lib/libsvn_repos-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_repos-1.a /home/steven/dest/subversion/lib/libsvn_repos-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_repos-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_repos-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -237,21 +237,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_repos/libsvn_repos.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_repos.pc
-cd subversion/libsvn_ra_local ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_ra_local-1.la /home/steven/dest2/subversion/lib/libsvn_ra_local-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_repos/libsvn_repos.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_repos.pc
+cd subversion/libsvn_ra_local ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_ra_local-1.la /home/steven/dest/subversion/lib/libsvn_ra_local-1.la
 libtool: warning: relinking 'libsvn_ra_local-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_ra_local; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_ra_local-1.la ra_plugin.lo split_url.lo ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_ra_local-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_ra_local-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so.0 || { rm -f libsvn_ra_local-1.so.0 && ln -s libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so || { rm -f libsvn_ra_local-1.so && ln -s libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_ra_local-1.lai /home/steven/dest2/subversion/lib/libsvn_ra_local-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_ra_local-1.a /home/steven/dest2/subversion/lib/libsvn_ra_local-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_ra_local-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_ra_local-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_ra_local; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_ra_local-1.la ra_plugin.lo split_url.lo ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_ra_local-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_ra_local-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so.0 || { rm -f libsvn_ra_local-1.so.0 && ln -s libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so || { rm -f libsvn_ra_local-1.so && ln -s libsvn_ra_local-1.so.0.0.0 libsvn_ra_local-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_ra_local-1.lai /home/steven/dest/subversion/lib/libsvn_ra_local-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_ra_local-1.a /home/steven/dest/subversion/lib/libsvn_ra_local-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_ra_local-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_ra_local-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -267,22 +267,22 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_ra_local/libsvn_ra_local.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_ra_local.pc
-/usr/bin/install -c -d /home/steven/dest2/subversion/lib /home/steven/dest2/subversion/share/pkgconfig
-cd subversion/libsvn_diff ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_diff-1.la /home/steven/dest2/subversion/lib/libsvn_diff-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_ra_local/libsvn_ra_local.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_ra_local.pc
+/usr/bin/install -c -d /home/steven/dest/subversion/lib /home/steven/dest/subversion/share/pkgconfig
+cd subversion/libsvn_diff ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_diff-1.la /home/steven/dest/subversion/lib/libsvn_diff-1.la
 libtool: warning: relinking 'libsvn_diff-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_diff; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_diff-1.la binary_diff.lo deprecated.lo diff.lo diff3.lo diff4.lo diff_file.lo diff_memory.lo diff_tree.lo lcs.lo parse-diff.lo token.lo util.lo ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 -lz )
-libtool: install: /usr/bin/install -c .libs/libsvn_diff-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_diff-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_diff-1.so.0.0.0 libsvn_diff-1.so.0 || { rm -f libsvn_diff-1.so.0 && ln -s libsvn_diff-1.so.0.0.0 libsvn_diff-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_diff-1.so.0.0.0 libsvn_diff-1.so || { rm -f libsvn_diff-1.so && ln -s libsvn_diff-1.so.0.0.0 libsvn_diff-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_diff-1.lai /home/steven/dest2/subversion/lib/libsvn_diff-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_diff-1.a /home/steven/dest2/subversion/lib/libsvn_diff-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_diff-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_diff-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_diff; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_diff-1.la binary_diff.lo deprecated.lo diff.lo diff3.lo diff4.lo diff_file.lo diff_memory.lo diff_tree.lo lcs.lo parse-diff.lo token.lo util.lo ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 -lz )
+libtool: install: /usr/bin/install -c .libs/libsvn_diff-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_diff-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_diff-1.so.0.0.0 libsvn_diff-1.so.0 || { rm -f libsvn_diff-1.so.0 && ln -s libsvn_diff-1.so.0.0.0 libsvn_diff-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_diff-1.so.0.0.0 libsvn_diff-1.so || { rm -f libsvn_diff-1.so && ln -s libsvn_diff-1.so.0.0.0 libsvn_diff-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_diff-1.lai /home/steven/dest/subversion/lib/libsvn_diff-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_diff-1.a /home/steven/dest/subversion/lib/libsvn_diff-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_diff-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_diff-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -298,21 +298,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_diff/libsvn_diff.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_diff.pc
-cd subversion/libsvn_ra ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_ra-1.la /home/steven/dest2/subversion/lib/libsvn_ra-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_diff/libsvn_diff.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_diff.pc
+cd subversion/libsvn_ra ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_ra-1.la /home/steven/dest/subversion/lib/libsvn_ra-1.la
 libtool: warning: relinking 'libsvn_ra-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_ra; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_ra-1.la compat.lo debug_reporter.lo deprecated.lo editor.lo ra_loader.lo util.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_ra_local/libsvn_ra_local-1.la ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_ra_svn/libsvn_ra_svn-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_ra-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_ra-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_ra-1.so.0.0.0 libsvn_ra-1.so.0 || { rm -f libsvn_ra-1.so.0 && ln -s libsvn_ra-1.so.0.0.0 libsvn_ra-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_ra-1.so.0.0.0 libsvn_ra-1.so || { rm -f libsvn_ra-1.so && ln -s libsvn_ra-1.so.0.0.0 libsvn_ra-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_ra-1.lai /home/steven/dest2/subversion/lib/libsvn_ra-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_ra-1.a /home/steven/dest2/subversion/lib/libsvn_ra-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_ra-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_ra-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_ra; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_ra-1.la compat.lo debug_reporter.lo deprecated.lo editor.lo ra_loader.lo util.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_ra_local/libsvn_ra_local-1.la ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la ../../subversion/libsvn_ra_svn/libsvn_ra_svn-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_ra-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_ra-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_ra-1.so.0.0.0 libsvn_ra-1.so.0 || { rm -f libsvn_ra-1.so.0 && ln -s libsvn_ra-1.so.0.0.0 libsvn_ra-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_ra-1.so.0.0.0 libsvn_ra-1.so || { rm -f libsvn_ra-1.so && ln -s libsvn_ra-1.so.0.0.0 libsvn_ra-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_ra-1.lai /home/steven/dest/subversion/lib/libsvn_ra-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_ra-1.a /home/steven/dest/subversion/lib/libsvn_ra-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_ra-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_ra-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -328,21 +328,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_ra/libsvn_ra.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_ra.pc
-cd subversion/libsvn_wc ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_wc-1.la /home/steven/dest2/subversion/lib/libsvn_wc-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_ra/libsvn_ra.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_ra.pc
+cd subversion/libsvn_wc ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_wc-1.la /home/steven/dest/subversion/lib/libsvn_wc-1.la
 libtool: warning: relinking 'libsvn_wc-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_wc; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_wc-1.la adm_crawler.lo adm_files.lo adm_ops.lo ambient_depth_filter_editor.lo cleanup.lo conflicts.lo context.lo copy.lo crop.lo delete.lo deprecated.lo diff_editor.lo diff_local.lo entries.lo externals.lo info.lo lock.lo merge.lo node.lo old-and-busted.lo props.lo questions.lo relocate.lo revert.lo revision_status.lo status.lo translate.lo tree_conflicts.lo update_editor.lo upgrade.lo util.lo wc_db.lo wc_db_pristine.lo wc_db_update_move.lo wc_db_util.lo wc_db_wcroot.lo wcroot_anchor.lo workqueue.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_diff/libsvn_diff-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_wc-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_wc-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_wc-1.so.0.0.0 libsvn_wc-1.so.0 || { rm -f libsvn_wc-1.so.0 && ln -s libsvn_wc-1.so.0.0.0 libsvn_wc-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_wc-1.so.0.0.0 libsvn_wc-1.so || { rm -f libsvn_wc-1.so && ln -s libsvn_wc-1.so.0.0.0 libsvn_wc-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_wc-1.lai /home/steven/dest2/subversion/lib/libsvn_wc-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_wc-1.a /home/steven/dest2/subversion/lib/libsvn_wc-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_wc-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_wc-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_wc; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_wc-1.la adm_crawler.lo adm_files.lo adm_ops.lo ambient_depth_filter_editor.lo cleanup.lo conflicts.lo context.lo copy.lo crop.lo delete.lo deprecated.lo diff_editor.lo diff_local.lo entries.lo externals.lo info.lo lock.lo merge.lo node.lo old-and-busted.lo props.lo questions.lo relocate.lo revert.lo revision_status.lo status.lo translate.lo tree_conflicts.lo update_editor.lo upgrade.lo util.lo wc_db.lo wc_db_pristine.lo wc_db_update_move.lo wc_db_util.lo wc_db_wcroot.lo wcroot_anchor.lo workqueue.lo ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_diff/libsvn_diff-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_wc-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_wc-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_wc-1.so.0.0.0 libsvn_wc-1.so.0 || { rm -f libsvn_wc-1.so.0 && ln -s libsvn_wc-1.so.0.0.0 libsvn_wc-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_wc-1.so.0.0.0 libsvn_wc-1.so || { rm -f libsvn_wc-1.so && ln -s libsvn_wc-1.so.0.0.0 libsvn_wc-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_wc-1.lai /home/steven/dest/subversion/lib/libsvn_wc-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_wc-1.a /home/steven/dest/subversion/lib/libsvn_wc-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_wc-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_wc-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -358,21 +358,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_wc/libsvn_wc.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_wc.pc
-cd subversion/libsvn_client ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_client-1.la /home/steven/dest2/subversion/lib/libsvn_client-1.la
+/usr/bin/install -c -m 644 subversion/libsvn_wc/libsvn_wc.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_wc.pc
+cd subversion/libsvn_client ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c libsvn_client-1.la /home/steven/dest/subversion/lib/libsvn_client-1.la
 libtool: warning: relinking 'libsvn_client-1.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/libsvn_client; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_client-1.la add.lo blame.lo cat.lo changelist.lo checkout.lo cleanup.lo cmdline.lo commit.lo commit_util.lo compat_providers.lo copy.lo copy_foreign.lo ctx.lo delete.lo deprecated.lo diff.lo diff_local.lo diff_summarize.lo export.lo externals.lo import.lo info.lo iprops.lo list.lo locking_commands.lo log.lo merge.lo mergeinfo.lo mtcc.lo patch.lo prop_commands.lo ra.lo relocate.lo repos_diff.lo resolved.lo revert.lo revisions.lo status.lo switch.lo update.lo upgrade.lo url.lo util.lo version.lo ../../subversion/libsvn_wc/libsvn_wc-1.la ../../subversion/libsvn_ra/libsvn_ra-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_diff/libsvn_diff-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest2/apr-util/lib -laprutil-1 -L/home/steven/dest2/apr/lib -lapr-1 )
-libtool: install: /usr/bin/install -c .libs/libsvn_client-1.so.0.0.0T /home/steven/dest2/subversion/lib/libsvn_client-1.so.0.0.0
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_client-1.so.0.0.0 libsvn_client-1.so.0 || { rm -f libsvn_client-1.so.0 && ln -s libsvn_client-1.so.0.0.0 libsvn_client-1.so.0; }; })
-libtool: install: (cd /home/steven/dest2/subversion/lib && { ln -s -f libsvn_client-1.so.0.0.0 libsvn_client-1.so || { rm -f libsvn_client-1.so && ln -s libsvn_client-1.so.0.0.0 libsvn_client-1.so; }; })
-libtool: install: /usr/bin/install -c .libs/libsvn_client-1.lai /home/steven/dest2/subversion/lib/libsvn_client-1.la
-libtool: install: /usr/bin/install -c .libs/libsvn_client-1.a /home/steven/dest2/subversion/lib/libsvn_client-1.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/lib/libsvn_client-1.a
-libtool: install: ranlib /home/steven/dest2/subversion/lib/libsvn_client-1.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/lib
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/libsvn_client; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/lib -version-info 0 -Wl,--no-undefined -o libsvn_client-1.la add.lo blame.lo cat.lo changelist.lo checkout.lo cleanup.lo cmdline.lo commit.lo commit_util.lo compat_providers.lo copy.lo copy_foreign.lo ctx.lo delete.lo deprecated.lo diff.lo diff_local.lo diff_summarize.lo export.lo externals.lo import.lo info.lo iprops.lo list.lo locking_commands.lo log.lo merge.lo mergeinfo.lo mtcc.lo patch.lo prop_commands.lo ra.lo relocate.lo repos_diff.lo resolved.lo revert.lo revisions.lo status.lo switch.lo update.lo upgrade.lo url.lo util.lo version.lo ../../subversion/libsvn_wc/libsvn_wc-1.la ../../subversion/libsvn_ra/libsvn_ra-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_diff/libsvn_diff-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la -L/home/steven/dest/apr-util/lib -laprutil-1 -L/home/steven/dest/apr/lib -lapr-1 )
+libtool: install: /usr/bin/install -c .libs/libsvn_client-1.so.0.0.0T /home/steven/dest/subversion/lib/libsvn_client-1.so.0.0.0
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_client-1.so.0.0.0 libsvn_client-1.so.0 || { rm -f libsvn_client-1.so.0 && ln -s libsvn_client-1.so.0.0.0 libsvn_client-1.so.0; }; })
+libtool: install: (cd /home/steven/dest/subversion/lib && { ln -s -f libsvn_client-1.so.0.0.0 libsvn_client-1.so || { rm -f libsvn_client-1.so && ln -s libsvn_client-1.so.0.0.0 libsvn_client-1.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsvn_client-1.lai /home/steven/dest/subversion/lib/libsvn_client-1.la
+libtool: install: /usr/bin/install -c .libs/libsvn_client-1.a /home/steven/dest/subversion/lib/libsvn_client-1.a
+libtool: install: chmod 644 /home/steven/dest/subversion/lib/libsvn_client-1.a
+libtool: install: ranlib /home/steven/dest/subversion/lib/libsvn_client-1.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/lib
+   /home/steven/dest/subversion/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -388,99 +388,99 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-/usr/bin/install -c -m 644 subversion/libsvn_client/libsvn_client.pc /home/steven/dest2/subversion/share/pkgconfig/libsvn_client.pc
-/usr/bin/install -c -d /home/steven/dest2/subversion/include/subversion-1
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/mod_authz_svn.h /home/steven/dest2/subversion/include/subversion-1/mod_authz_svn.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/mod_dav_svn.h /home/steven/dest2/subversion/include/subversion-1/mod_dav_svn.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_auth.h /home/steven/dest2/subversion/include/subversion-1/svn_auth.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_base64.h /home/steven/dest2/subversion/include/subversion-1/svn_base64.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_cache_config.h /home/steven/dest2/subversion/include/subversion-1/svn_cache_config.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_checksum.h /home/steven/dest2/subversion/include/subversion-1/svn_checksum.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_client.h /home/steven/dest2/subversion/include/subversion-1/svn_client.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_cmdline.h /home/steven/dest2/subversion/include/subversion-1/svn_cmdline.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_compat.h /home/steven/dest2/subversion/include/subversion-1/svn_compat.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_config.h /home/steven/dest2/subversion/include/subversion-1/svn_config.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_ctype.h /home/steven/dest2/subversion/include/subversion-1/svn_ctype.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_dav.h /home/steven/dest2/subversion/include/subversion-1/svn_dav.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_delta.h /home/steven/dest2/subversion/include/subversion-1/svn_delta.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_diff.h /home/steven/dest2/subversion/include/subversion-1/svn_diff.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_dirent_uri.h /home/steven/dest2/subversion/include/subversion-1/svn_dirent_uri.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_dso.h /home/steven/dest2/subversion/include/subversion-1/svn_dso.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_error.h /home/steven/dest2/subversion/include/subversion-1/svn_error.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_error_codes.h /home/steven/dest2/subversion/include/subversion-1/svn_error_codes.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_fs.h /home/steven/dest2/subversion/include/subversion-1/svn_fs.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_hash.h /home/steven/dest2/subversion/include/subversion-1/svn_hash.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_io.h /home/steven/dest2/subversion/include/subversion-1/svn_io.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_iter.h /home/steven/dest2/subversion/include/subversion-1/svn_iter.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_md5.h /home/steven/dest2/subversion/include/subversion-1/svn_md5.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_mergeinfo.h /home/steven/dest2/subversion/include/subversion-1/svn_mergeinfo.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_nls.h /home/steven/dest2/subversion/include/subversion-1/svn_nls.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_opt.h /home/steven/dest2/subversion/include/subversion-1/svn_opt.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_path.h /home/steven/dest2/subversion/include/subversion-1/svn_path.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_pools.h /home/steven/dest2/subversion/include/subversion-1/svn_pools.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_props.h /home/steven/dest2/subversion/include/subversion-1/svn_props.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_quoprint.h /home/steven/dest2/subversion/include/subversion-1/svn_quoprint.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_ra.h /home/steven/dest2/subversion/include/subversion-1/svn_ra.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_ra_svn.h /home/steven/dest2/subversion/include/subversion-1/svn_ra_svn.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_repos.h /home/steven/dest2/subversion/include/subversion-1/svn_repos.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_sorts.h /home/steven/dest2/subversion/include/subversion-1/svn_sorts.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_string.h /home/steven/dest2/subversion/include/subversion-1/svn_string.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_subst.h /home/steven/dest2/subversion/include/subversion-1/svn_subst.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_time.h /home/steven/dest2/subversion/include/subversion-1/svn_time.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_types.h /home/steven/dest2/subversion/include/subversion-1/svn_types.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_user.h /home/steven/dest2/subversion/include/subversion-1/svn_user.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_utf.h /home/steven/dest2/subversion/include/subversion-1/svn_utf.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_version.h /home/steven/dest2/subversion/include/subversion-1/svn_version.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_wc.h /home/steven/dest2/subversion/include/subversion-1/svn_wc.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_x509.h /home/steven/dest2/subversion/include/subversion-1/svn_x509.h
-/usr/bin/install -c -m 644 /home/steven/src2/subversion-1.9.5/subversion/include/svn_xml.h /home/steven/dest2/subversion/include/subversion-1/svn_xml.h
-/usr/bin/install -c -d /home/steven/dest2/subversion/bin
-cd subversion/svn ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svn /home/steven/dest2/subversion/bin/svn
-libtool: install: /usr/bin/install -c .libs/svn /home/steven/dest2/subversion/bin/svn
-cd subversion/svnadmin ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnadmin /home/steven/dest2/subversion/bin/svnadmin
-libtool: install: /usr/bin/install -c .libs/svnadmin /home/steven/dest2/subversion/bin/svnadmin
-cd subversion/svnbench ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnbench /home/steven/dest2/subversion/bin/svnbench
-libtool: install: /usr/bin/install -c .libs/svnbench /home/steven/dest2/subversion/bin/svnbench
-cd subversion/svndumpfilter ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svndumpfilter /home/steven/dest2/subversion/bin/svndumpfilter
-libtool: install: /usr/bin/install -c .libs/svndumpfilter /home/steven/dest2/subversion/bin/svndumpfilter
-cd subversion/svnfsfs ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnfsfs /home/steven/dest2/subversion/bin/svnfsfs
-libtool: install: /usr/bin/install -c .libs/svnfsfs /home/steven/dest2/subversion/bin/svnfsfs
-cd subversion/svnlook ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnlook /home/steven/dest2/subversion/bin/svnlook
-libtool: install: /usr/bin/install -c .libs/svnlook /home/steven/dest2/subversion/bin/svnlook
-cd subversion/svnmucc ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnmucc /home/steven/dest2/subversion/bin/svnmucc
-libtool: install: /usr/bin/install -c .libs/svnmucc /home/steven/dest2/subversion/bin/svnmucc
-cd subversion/svnrdump ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnrdump /home/steven/dest2/subversion/bin/svnrdump
-libtool: install: /usr/bin/install -c .libs/svnrdump /home/steven/dest2/subversion/bin/svnrdump
-cd subversion/svnserve ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnserve /home/steven/dest2/subversion/bin/svnserve
-libtool: install: /usr/bin/install -c .libs/svnserve /home/steven/dest2/subversion/bin/svnserve
-cd subversion/svnsync ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnsync /home/steven/dest2/subversion/bin/svnsync
-libtool: install: /usr/bin/install -c .libs/svnsync /home/steven/dest2/subversion/bin/svnsync
-cd subversion/svnversion ; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnversion /home/steven/dest2/subversion/bin/svnversion
-libtool: install: /usr/bin/install -c .libs/svnversion /home/steven/dest2/subversion/bin/svnversion
-/usr/bin/install -c -m 644 ./subversion/svn/svn.1 /home/steven/dest2/subversion/share/man/man1/svn.1
-/usr/bin/install -c -m 644 ./subversion/svnadmin/svnadmin.1 /home/steven/dest2/subversion/share/man/man1/svnadmin.1
-/usr/bin/install -c -m 644 ./subversion/svndumpfilter/svndumpfilter.1 /home/steven/dest2/subversion/share/man/man1/svndumpfilter.1
-/usr/bin/install -c -m 644 ./subversion/svnlook/svnlook.1 /home/steven/dest2/subversion/share/man/man1/svnlook.1
-/usr/bin/install -c -m 644 ./subversion/svnmucc/svnmucc.1 /home/steven/dest2/subversion/share/man/man1/svnmucc.1
-/usr/bin/install -c -m 644 ./subversion/svnrdump/svnrdump.1 /home/steven/dest2/subversion/share/man/man1/svnrdump.1
-/usr/bin/install -c -m 644 ./subversion/svnserve/svnserve.8 /home/steven/dest2/subversion/share/man/man8/svnserve.8
-/usr/bin/install -c -m 644 ./subversion/svnserve/svnserve.conf.5 /home/steven/dest2/subversion/share/man/man5/svnserve.conf.5
-/usr/bin/install -c -m 644 ./subversion/svnsync/svnsync.1 /home/steven/dest2/subversion/share/man/man1/svnsync.1
-/usr/bin/install -c -m 644 ./subversion/svnversion/svnversion.1 /home/steven/dest2/subversion/share/man/man1/svnversion.1
-if true ; then cd subversion/mod_dav_svn ; /usr/bin/install -c -d "/home/steven/dest2/subversion/libexec" ; /home/steven/dest2/httpd/bin/apxs -i -S LIBEXECDIR="/home/steven/dest2/subversion/libexec"  -n dav_svn mod_dav_svn.la ; fi
-/home/steven/dest2/httpd/build/instdso.sh SH_LIBTOOL='/home/steven/dest2/apr/build-1/libtool' mod_dav_svn.la /home/steven/dest2/subversion/libexec
-/home/steven/dest2/apr/build-1/libtool --mode=install install mod_dav_svn.la /home/steven/dest2/subversion/libexec/
+/usr/bin/install -c -m 644 subversion/libsvn_client/libsvn_client.pc /home/steven/dest/subversion/share/pkgconfig/libsvn_client.pc
+/usr/bin/install -c -d /home/steven/dest/subversion/include/subversion-1
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/mod_authz_svn.h /home/steven/dest/subversion/include/subversion-1/mod_authz_svn.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/mod_dav_svn.h /home/steven/dest/subversion/include/subversion-1/mod_dav_svn.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_auth.h /home/steven/dest/subversion/include/subversion-1/svn_auth.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_base64.h /home/steven/dest/subversion/include/subversion-1/svn_base64.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_cache_config.h /home/steven/dest/subversion/include/subversion-1/svn_cache_config.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_checksum.h /home/steven/dest/subversion/include/subversion-1/svn_checksum.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_client.h /home/steven/dest/subversion/include/subversion-1/svn_client.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_cmdline.h /home/steven/dest/subversion/include/subversion-1/svn_cmdline.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_compat.h /home/steven/dest/subversion/include/subversion-1/svn_compat.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_config.h /home/steven/dest/subversion/include/subversion-1/svn_config.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_ctype.h /home/steven/dest/subversion/include/subversion-1/svn_ctype.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_dav.h /home/steven/dest/subversion/include/subversion-1/svn_dav.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_delta.h /home/steven/dest/subversion/include/subversion-1/svn_delta.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_diff.h /home/steven/dest/subversion/include/subversion-1/svn_diff.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_dirent_uri.h /home/steven/dest/subversion/include/subversion-1/svn_dirent_uri.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_dso.h /home/steven/dest/subversion/include/subversion-1/svn_dso.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_error.h /home/steven/dest/subversion/include/subversion-1/svn_error.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_error_codes.h /home/steven/dest/subversion/include/subversion-1/svn_error_codes.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_fs.h /home/steven/dest/subversion/include/subversion-1/svn_fs.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_hash.h /home/steven/dest/subversion/include/subversion-1/svn_hash.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_io.h /home/steven/dest/subversion/include/subversion-1/svn_io.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_iter.h /home/steven/dest/subversion/include/subversion-1/svn_iter.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_md5.h /home/steven/dest/subversion/include/subversion-1/svn_md5.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_mergeinfo.h /home/steven/dest/subversion/include/subversion-1/svn_mergeinfo.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_nls.h /home/steven/dest/subversion/include/subversion-1/svn_nls.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_opt.h /home/steven/dest/subversion/include/subversion-1/svn_opt.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_path.h /home/steven/dest/subversion/include/subversion-1/svn_path.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_pools.h /home/steven/dest/subversion/include/subversion-1/svn_pools.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_props.h /home/steven/dest/subversion/include/subversion-1/svn_props.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_quoprint.h /home/steven/dest/subversion/include/subversion-1/svn_quoprint.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_ra.h /home/steven/dest/subversion/include/subversion-1/svn_ra.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_ra_svn.h /home/steven/dest/subversion/include/subversion-1/svn_ra_svn.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_repos.h /home/steven/dest/subversion/include/subversion-1/svn_repos.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_sorts.h /home/steven/dest/subversion/include/subversion-1/svn_sorts.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_string.h /home/steven/dest/subversion/include/subversion-1/svn_string.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_subst.h /home/steven/dest/subversion/include/subversion-1/svn_subst.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_time.h /home/steven/dest/subversion/include/subversion-1/svn_time.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_types.h /home/steven/dest/subversion/include/subversion-1/svn_types.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_user.h /home/steven/dest/subversion/include/subversion-1/svn_user.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_utf.h /home/steven/dest/subversion/include/subversion-1/svn_utf.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_version.h /home/steven/dest/subversion/include/subversion-1/svn_version.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_wc.h /home/steven/dest/subversion/include/subversion-1/svn_wc.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_x509.h /home/steven/dest/subversion/include/subversion-1/svn_x509.h
+/usr/bin/install -c -m 644 /home/steven/src/subversion-1.9.5/subversion/include/svn_xml.h /home/steven/dest/subversion/include/subversion-1/svn_xml.h
+/usr/bin/install -c -d /home/steven/dest/subversion/bin
+cd subversion/svn ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svn /home/steven/dest/subversion/bin/svn
+libtool: install: /usr/bin/install -c .libs/svn /home/steven/dest/subversion/bin/svn
+cd subversion/svnadmin ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnadmin /home/steven/dest/subversion/bin/svnadmin
+libtool: install: /usr/bin/install -c .libs/svnadmin /home/steven/dest/subversion/bin/svnadmin
+cd subversion/svnbench ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnbench /home/steven/dest/subversion/bin/svnbench
+libtool: install: /usr/bin/install -c .libs/svnbench /home/steven/dest/subversion/bin/svnbench
+cd subversion/svndumpfilter ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svndumpfilter /home/steven/dest/subversion/bin/svndumpfilter
+libtool: install: /usr/bin/install -c .libs/svndumpfilter /home/steven/dest/subversion/bin/svndumpfilter
+cd subversion/svnfsfs ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnfsfs /home/steven/dest/subversion/bin/svnfsfs
+libtool: install: /usr/bin/install -c .libs/svnfsfs /home/steven/dest/subversion/bin/svnfsfs
+cd subversion/svnlook ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnlook /home/steven/dest/subversion/bin/svnlook
+libtool: install: /usr/bin/install -c .libs/svnlook /home/steven/dest/subversion/bin/svnlook
+cd subversion/svnmucc ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnmucc /home/steven/dest/subversion/bin/svnmucc
+libtool: install: /usr/bin/install -c .libs/svnmucc /home/steven/dest/subversion/bin/svnmucc
+cd subversion/svnrdump ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnrdump /home/steven/dest/subversion/bin/svnrdump
+libtool: install: /usr/bin/install -c .libs/svnrdump /home/steven/dest/subversion/bin/svnrdump
+cd subversion/svnserve ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnserve /home/steven/dest/subversion/bin/svnserve
+libtool: install: /usr/bin/install -c .libs/svnserve /home/steven/dest/subversion/bin/svnserve
+cd subversion/svnsync ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnsync /home/steven/dest/subversion/bin/svnsync
+libtool: install: /usr/bin/install -c .libs/svnsync /home/steven/dest/subversion/bin/svnsync
+cd subversion/svnversion ; /bin/bash "/home/steven/src/subversion-1.9.5/libtool" --mode=install /usr/bin/install -c svnversion /home/steven/dest/subversion/bin/svnversion
+libtool: install: /usr/bin/install -c .libs/svnversion /home/steven/dest/subversion/bin/svnversion
+/usr/bin/install -c -m 644 ./subversion/svn/svn.1 /home/steven/dest/subversion/share/man/man1/svn.1
+/usr/bin/install -c -m 644 ./subversion/svnadmin/svnadmin.1 /home/steven/dest/subversion/share/man/man1/svnadmin.1
+/usr/bin/install -c -m 644 ./subversion/svndumpfilter/svndumpfilter.1 /home/steven/dest/subversion/share/man/man1/svndumpfilter.1
+/usr/bin/install -c -m 644 ./subversion/svnlook/svnlook.1 /home/steven/dest/subversion/share/man/man1/svnlook.1
+/usr/bin/install -c -m 644 ./subversion/svnmucc/svnmucc.1 /home/steven/dest/subversion/share/man/man1/svnmucc.1
+/usr/bin/install -c -m 644 ./subversion/svnrdump/svnrdump.1 /home/steven/dest/subversion/share/man/man1/svnrdump.1
+/usr/bin/install -c -m 644 ./subversion/svnserve/svnserve.8 /home/steven/dest/subversion/share/man/man8/svnserve.8
+/usr/bin/install -c -m 644 ./subversion/svnserve/svnserve.conf.5 /home/steven/dest/subversion/share/man/man5/svnserve.conf.5
+/usr/bin/install -c -m 644 ./subversion/svnsync/svnsync.1 /home/steven/dest/subversion/share/man/man1/svnsync.1
+/usr/bin/install -c -m 644 ./subversion/svnversion/svnversion.1 /home/steven/dest/subversion/share/man/man1/svnversion.1
+if true ; then cd subversion/mod_dav_svn ; /usr/bin/install -c -d "/home/steven/dest/subversion/libexec" ; /home/steven/dest/httpd/bin/apxs -i -S LIBEXECDIR="/home/steven/dest/subversion/libexec"  -n dav_svn mod_dav_svn.la ; fi
+/home/steven/dest/httpd/build/instdso.sh SH_LIBTOOL='/home/steven/dest/apr/build-1/libtool' mod_dav_svn.la /home/steven/dest/subversion/libexec
+/home/steven/dest/apr/build-1/libtool --mode=install install mod_dav_svn.la /home/steven/dest/subversion/libexec/
 libtool: install: warning: relinking `mod_dav_svn.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/mod_dav_svn; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/libexec -avoid-version -module -o mod_dav_svn.la activity.lo authz.lo deadprops.lo liveprops.lo lock.lo merge.lo mirror.lo mod_dav_svn.lo posts/create_txn.lo reports/dated-rev.lo reports/deleted-rev.lo reports/file-revs.lo reports/get-location-segments.lo reports/get-locations.lo reports/get-locks.lo reports/inherited-props.lo reports/log.lo reports/mergeinfo.lo reports/replay.lo reports/update.lo repos.lo status.lo util.lo version.lo ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la )
-libtool: install: install .libs/mod_dav_svn.soT /home/steven/dest2/subversion/libexec/mod_dav_svn.so
-libtool: install: install .libs/mod_dav_svn.lai /home/steven/dest2/subversion/libexec/mod_dav_svn.la
-libtool: install: install .libs/mod_dav_svn.a /home/steven/dest2/subversion/libexec/mod_dav_svn.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/libexec/mod_dav_svn.a
-libtool: install: ranlib /home/steven/dest2/subversion/libexec/mod_dav_svn.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/libexec
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/mod_dav_svn; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/libexec -avoid-version -module -o mod_dav_svn.la activity.lo authz.lo deadprops.lo liveprops.lo lock.lo merge.lo mirror.lo mod_dav_svn.lo posts/create_txn.lo reports/dated-rev.lo reports/deleted-rev.lo reports/file-revs.lo reports/get-location-segments.lo reports/get-locations.lo reports/get-locks.lo reports/inherited-props.lo reports/log.lo reports/mergeinfo.lo reports/replay.lo reports/update.lo repos.lo status.lo util.lo version.lo ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_fs/libsvn_fs-1.la ../../subversion/libsvn_delta/libsvn_delta-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la )
+libtool: install: install .libs/mod_dav_svn.soT /home/steven/dest/subversion/libexec/mod_dav_svn.so
+libtool: install: install .libs/mod_dav_svn.lai /home/steven/dest/subversion/libexec/mod_dav_svn.la
+libtool: install: install .libs/mod_dav_svn.a /home/steven/dest/subversion/libexec/mod_dav_svn.a
+libtool: install: chmod 644 /home/steven/dest/subversion/libexec/mod_dav_svn.a
+libtool: install: ranlib /home/steven/dest/subversion/libexec/mod_dav_svn.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/libexec
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/libexec
+   /home/steven/dest/subversion/libexec
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -496,21 +496,21 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-chmod 755 /home/steven/dest2/subversion/libexec/mod_dav_svn.so
-if true ; then cd subversion/mod_authz_svn ; /usr/bin/install -c -d "/home/steven/dest2/subversion/libexec" ; /home/steven/dest2/httpd/bin/apxs -i -S LIBEXECDIR="/home/steven/dest2/subversion/libexec"  -n authz_svn mod_authz_svn.la ; fi
-/home/steven/dest2/httpd/build/instdso.sh SH_LIBTOOL='/home/steven/dest2/apr/build-1/libtool' mod_authz_svn.la /home/steven/dest2/subversion/libexec
-/home/steven/dest2/apr/build-1/libtool --mode=install install mod_authz_svn.la /home/steven/dest2/subversion/libexec/
+chmod 755 /home/steven/dest/subversion/libexec/mod_dav_svn.so
+if true ; then cd subversion/mod_authz_svn ; /usr/bin/install -c -d "/home/steven/dest/subversion/libexec" ; /home/steven/dest/httpd/bin/apxs -i -S LIBEXECDIR="/home/steven/dest/subversion/libexec"  -n authz_svn mod_authz_svn.la ; fi
+/home/steven/dest/httpd/build/instdso.sh SH_LIBTOOL='/home/steven/dest/apr/build-1/libtool' mod_authz_svn.la /home/steven/dest/subversion/libexec
+/home/steven/dest/apr/build-1/libtool --mode=install install mod_authz_svn.la /home/steven/dest/subversion/libexec/
 libtool: install: warning: relinking `mod_authz_svn.la'
-libtool: install: (cd /home/steven/src2/subversion-1.9.5/subversion/mod_authz_svn; /bin/bash "/home/steven/src2/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest2/subversion/libexec -avoid-version -module -o mod_authz_svn.la mod_authz_svn.lo ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la )
-libtool: install: install .libs/mod_authz_svn.soT /home/steven/dest2/subversion/libexec/mod_authz_svn.so
-libtool: install: install .libs/mod_authz_svn.lai /home/steven/dest2/subversion/libexec/mod_authz_svn.la
-libtool: install: install .libs/mod_authz_svn.a /home/steven/dest2/subversion/libexec/mod_authz_svn.a
-libtool: install: chmod 644 /home/steven/dest2/subversion/libexec/mod_authz_svn.a
-libtool: install: ranlib /home/steven/dest2/subversion/libexec/mod_authz_svn.a
-libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest2/subversion/libexec
+libtool: install: (cd /home/steven/src/subversion-1.9.5/subversion/mod_authz_svn; /bin/bash "/home/steven/src/subversion-1.9.5/libtool"  --tag CC --silent --mode=relink gcc -g3 -fno-omit-frame-pointer -fno-inline -pthread -DSVN_DEBUG -DAP_DEBUG -rpath /home/steven/dest/subversion/libexec -avoid-version -module -o mod_authz_svn.la mod_authz_svn.lo ../../subversion/libsvn_repos/libsvn_repos-1.la ../../subversion/libsvn_subr/libsvn_subr-1.la )
+libtool: install: install .libs/mod_authz_svn.soT /home/steven/dest/subversion/libexec/mod_authz_svn.so
+libtool: install: install .libs/mod_authz_svn.lai /home/steven/dest/subversion/libexec/mod_authz_svn.la
+libtool: install: install .libs/mod_authz_svn.a /home/steven/dest/subversion/libexec/mod_authz_svn.a
+libtool: install: chmod 644 /home/steven/dest/subversion/libexec/mod_authz_svn.a
+libtool: install: ranlib /home/steven/dest/subversion/libexec/mod_authz_svn.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/sbin" ldconfig -n /home/steven/dest/subversion/libexec
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/steven/dest2/subversion/libexec
+   /home/steven/dest/subversion/libexec
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
@@ -526,35 +526,35 @@ flag during linking and do at least one of the following:
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-chmod 755 /home/steven/dest2/subversion/libexec/mod_authz_svn.so
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/de/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 de.mo /home/steven/dest2/subversion/share/locale/de/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/es/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 es.mo /home/steven/dest2/subversion/share/locale/es/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/fr/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 fr.mo /home/steven/dest2/subversion/share/locale/fr/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/it/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 it.mo /home/steven/dest2/subversion/share/locale/it/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/ja/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 ja.mo /home/steven/dest2/subversion/share/locale/ja/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/ko/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 ko.mo /home/steven/dest2/subversion/share/locale/ko/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/nb/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 nb.mo /home/steven/dest2/subversion/share/locale/nb/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/pl/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 pl.mo /home/steven/dest2/subversion/share/locale/pl/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/pt_BR/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 pt_BR.mo /home/steven/dest2/subversion/share/locale/pt_BR/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/sv/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 sv.mo /home/steven/dest2/subversion/share/locale/sv/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/zh_CN/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 zh_CN.mo /home/steven/dest2/subversion/share/locale/zh_CN/LC_MESSAGES/subversion.mo
-/usr/bin/install -c -d /home/steven/dest2/subversion/share/locale/zh_TW/LC_MESSAGES
-cd subversion/po ; /usr/bin/install -c -m 644 zh_TW.mo /home/steven/dest2/subversion/share/locale/zh_TW/LC_MESSAGES/subversion.mo
-test -d /home/steven/dest2/subversion/include/subversion-1 || \
-  /usr/bin/install -c -d /home/steven/dest2/subversion/include/subversion-1
+chmod 755 /home/steven/dest/subversion/libexec/mod_authz_svn.so
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/de/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 de.mo /home/steven/dest/subversion/share/locale/de/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/es/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 es.mo /home/steven/dest/subversion/share/locale/es/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/fr/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 fr.mo /home/steven/dest/subversion/share/locale/fr/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/it/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 it.mo /home/steven/dest/subversion/share/locale/it/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/ja/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 ja.mo /home/steven/dest/subversion/share/locale/ja/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/ko/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 ko.mo /home/steven/dest/subversion/share/locale/ko/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/nb/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 nb.mo /home/steven/dest/subversion/share/locale/nb/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/pl/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 pl.mo /home/steven/dest/subversion/share/locale/pl/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/pt_BR/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 pt_BR.mo /home/steven/dest/subversion/share/locale/pt_BR/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/sv/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 sv.mo /home/steven/dest/subversion/share/locale/sv/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/zh_CN/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 zh_CN.mo /home/steven/dest/subversion/share/locale/zh_CN/LC_MESSAGES/subversion.mo
+/usr/bin/install -c -d /home/steven/dest/subversion/share/locale/zh_TW/LC_MESSAGES
+cd subversion/po ; /usr/bin/install -c -m 644 zh_TW.mo /home/steven/dest/subversion/share/locale/zh_TW/LC_MESSAGES/subversion.mo
+test -d /home/steven/dest/subversion/include/subversion-1 || \
+  /usr/bin/install -c -d /home/steven/dest/subversion/include/subversion-1
 (subversion/svnversion/svnversion . 2> /dev/null ||  \
  svnversion . 2> /dev/null ||                        \
  echo "unknown";                                                 \
-) > /home/steven/dest2/subversion/include/subversion-1/svn-revision.txt
+) > /home/steven/dest/subversion/include/subversion-1/svn-revision.txt
