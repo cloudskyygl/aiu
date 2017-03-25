@@ -35,5 +35,6 @@ sed -i '
 --enable=receive-pack \
 --informative-errors"/
 ' /etc/default/git-daemon
+is_ok
 
 /etc/init.d/git-daemon restart

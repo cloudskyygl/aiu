@@ -6,22 +6,26 @@ if [ -z $AIU ]; then
   AIU=$(dirname $(cd `dirname $0`; pwd))
 fi
 
-source $AIU/install.d/functions.sh
+if [ -f $AIU/install.d/functions.sh ]; then
+  source $AIU/install.d/functions.sh
+fi
 
+echo "#################### Check If VIM Installed ####################"
+VIM=`cat $AIU/install.conf | grep ^VIM | cut -d "=" -f 2`
+echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed vim
-is_ok
+is_installed $VIM
 
-apt-get -y update
-apt-get -y install libncurses5-dev
-is_ok
+echo "#################### Handle VIM Requirements ####################"
+apt_install libncurses5-dev
 
+echo "#################### Install Subversion ####################"
+echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install vim
-is_ok
-VIM_SRC=$SRCDIR
-VIM_DEST=$DEST/vim
-
+pre_install $VIM
+VIM_SOURCE=$SRCDIR
+VIM_SRC=$SRC/$VIM_SOURCE
+VIM_DEST=$DEST/$VIM
 cd $VIM_SRC
 ./configure --prefix=$VIM_DEST \
 --with-features=huge \
@@ -38,4 +42,6 @@ is_ok
 make clean
 save_pkg_dest vim
 is_ok
+echo "## Leaving directory '$VIM_SRC'"
+cd $AIU
 echo "#################### VIM END ####################"

@@ -7,24 +7,26 @@ if [ -z $AIU ]; then
 fi
 
 if [ -f $AIU/install.d/functions.sh ]; then
-  source $AIU/install.d/functions.sh
+  . $AIU/install.d/functions.sh
 fi
 
+echo "#################### Check If Node Installed ####################"
+NODE=`cat $AIU/install.conf | grep ^NODE= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed node
-is_ok
+is_installed $NODE
 
-echo "#################### Checking Requirements ####################"
+echo "#################### Handle Requirements ####################"
 apt_install clang
+
+echo "#################### Install Node ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install node
-NODE_SRC=$SRCDIR
-NODE_DEST=$DEST/node
-
-echo "#################### Installing $NODE_SRC ####################"
-echo "## Entering directory '$SRC/$NODE_SRC'"
+pre_install $NODE
+NODE_SOURCE=$SRCDIR
+NODE_SRC=$SRC/$NODE_SOURCE
+NODE_DEST=$DEST/$NODE
+echo "## Entering directory '$NODE_SRC'"
 cd $NODE_SRC
 ./configure --prefix=$NODE_DEST
 is_ok
@@ -37,7 +39,8 @@ is_ok
 make install &>$AIU/install.d/log/node_make_install.log
 is_ok
 make clean
-save_pkg_dest node
-echo "## Leaving directory '$SRC/$NODE_SRC'"
+save_pkg_dest $NODE
+is_ok
+echo "## Leaving directory '$NODE_SRC'"
 cd $AIU
-echo "#################### NODE BEGIN ####################"
+echo "#################### NODE END ####################"

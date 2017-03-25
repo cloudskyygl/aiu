@@ -10,32 +10,35 @@ if [ -f $AIU/install.d/functions.sh ]; then
   source $AIU/install.d/functions.sh
 fi
 
+echo "#################### Check If Subversion Installed ####################"
+SUBVERSION=`cat $AIU/install.conf | grep ^SUBVERSION= | cut -d "=" -f 2`
+echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed subversion
-is_ok
+is_installed $SUBVERSION
 
-echo "#################### Checking Requirements ####################"
-APR_DEST=`cat $AIU/install.conf | grep -w apr_dest | cut -d "=" -f 2`
+echo "#################### Handle Subversion Requirements ####################"
+APR_DEST=`cat $AIU/install.conf | grep ^apr_dest= | cut -d "=" -f 2`
 is_dir_exist $APR_DEST
-APR_UTIL_DEST=`cat $AIU/install.conf | grep -w apr-util_dest | cut -d "=" -f 2`
+APR_UTIL_DEST=`cat $AIU/install.conf | grep ^apr-util_dest= | cut -d "=" -f 2`
 is_dir_exist $APR_UTIL_DEST
-HTTPD_DEST=`cat $AIU/install.conf | grep -w httpd_dest | cut -d "=" -f 2`
+HTTPD_DEST=`cat $AIU/install.conf | grep ^httpd_dest= | cut -d "=" -f 2`
 is_dir_exist $HTTPD_DEST
 
+echo "#################### Install Subversion ####################"
+echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install subversion
-SUBVERSION_SRC=$SRCDIR
-SUBVERSION_DEST=$DEST
-
+pre_install $SUBVERSION
+SUBVERSION_SOURCE=$SRCDIR
+SUBVERSION_SRC=$SRC/$SUBVERSION_SOURCE
+SUBVERSION_DEST=$DEST/$SUBVERSION
 pre_install sqlite-amalgamation
-SQLITE_AMALGAMATION_SRC=$SRCDIR
-mv $SQLITE_AMALGAMATION_SRC sqlite-amalgamation
-SQLITE_AMALGAMATION_SRC=sqlite-amalgamation
-mv $SQLITE_AMALGAMATION_SRC $SUBVERSION_SRC
-
-echo "#################### Installing $SUBVERSION_SRC ####################"
+SQLITE_AMALGAMATION_SOURCE=$SRCDIR
+mv $SQLITE_AMALGAMATION_SOURCE sqlite-amalgamation
+SQLITE_AMALGAMATION_SOURCE=sqlite-amalgamation
+mv $SQLITE_AMALGAMATION_SOURCE $SUBVERSION_SOURCE
+echo "## Entering directory '$SUBVERSION_SRC'"
 cd $SUBVERSION_SRC
-./configure --prefix=$DEST \
+./configure --prefix=$SUBVERSION_DEST \
 --with-apr=$APR_DEST \
 --with-apr-util=$APR_UTIL_DEST \
 --with-apxs=$HTTPD_DEST/bin/apxs \
@@ -46,5 +49,8 @@ is_ok
 make install &>$AIU/install.d/log/subversion_make_install.log
 is_ok
 make clean
-save_pkg_dest subversion
+save_pkg_dest $SUBVERSION
+is_ok
+echo "## Leaving directory '$SUBVERSION_SRC'"
+cd $AIU
 echo "#################### Subversion END ####################"
