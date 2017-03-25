@@ -38,12 +38,12 @@ function is_installed() {
   unset i
 
   if [ -z $inst_dir ]; then
-    echo "## START INSTALLING $1"
+    echo "## start installing $1"
     return 0
   fi
 
-  echo "## FOUND $1 in `pwd`/$inst_dir"
-  echo "## STOP script $0"
+  echo "## found $1 in `pwd`/$inst_dir"
+  echo "## stop script $0"
   exit 0
 
 }
@@ -66,7 +66,7 @@ function apt_install() {
   apt-get -y dist-upgrade > /dev/null
   apt-get -y install $*
   if [[ $? != 0 ]]; then
-    echo "## apt-get ERROR"
+    echo "## apt-get error"
     exit
   fi
 }
@@ -76,7 +76,7 @@ function pre_install() {
   for i in $1*
   do
     if [ -d $i ]; then
-      echo "## DELETING $1 temp source directory"
+      echo "## deleting $1 temp decompressed directory"
       rm -rf $i
     fi
   done
@@ -89,29 +89,34 @@ function pre_install() {
   done
 
   if [ -z $getfile ]; then
-    echo "## DOWNLOADING $1 source archive"
     url=`cat $AIU/install.conf | grep $1_url | cut -d "=" -f 2`
+    if [ -z $url ] then
+      echo "## not found downloading URL"
+      exit
+    fi
+    dfile=`basename $url`
+    echo "## downloading $dfile"
     wget $url
-    if [ ! $? -eq 0 ]; then
-      echo "## DOWNLOADING ERROR"
-      downloaded_file=`basename $url`
-      if [ -f $downloaded_file ]; then
-        rm -rf $downloaded_file
+    if [ $? -ne 0 ]; then
+      echo "## downloading $dfile error"
+      if [ -f $dfile ]; then
+        rm -rf $dfile
       fi
       exit
     fi
-    getfile=`basename $url`
+    getfile=$dfile
+    unset dfile
   fi
 
-  echo "## EXTRACTING $1 source archive: $getfile"
+  echo "## extracting $getfile"
   decompress $getfile
-  unset getfile
+  is_ok
 
   for dir in $1*
   do
     if [ -d $dir ]; then
       SRCDIR=$dir
-      echo "## EXTRACTING $1 source archive to directory '$SRCDIR' DONE"
+      echo "## $getfile extracted to directory '$SRCDIR'"
       r=`cat $AIU/install.conf | grep $1_src`
       if [ -z $r ]; then
         sed -i "/# PKG_SRC/a $1_src=$SRC/$SRCDIR" $AIU/install.conf
@@ -120,7 +125,7 @@ function pre_install() {
       return 0
     fi
   done
-
+  unset getfile
   echo "## EXIT INSTALLING, $1 SOURCE ARCHIVE NOT FOUND, OR EXTRACTING ERROR"
   exit
 }

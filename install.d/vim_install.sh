@@ -32,7 +32,8 @@ cd $VIM_SRC
 --enable-perlinterp
 is_ok
 make
-make install
+is_ok
+make install &>$AIU/install.d/log/vim_make_install.log
 is_ok
 make clean
 save_pkg_dest vim

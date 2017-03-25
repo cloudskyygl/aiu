@@ -34,7 +34,7 @@ make doc
 is_ok
 ./node -e "console.log('Hello from Node.js ' + process.version)"
 is_ok
-make install
+make install &>$AIU/install.d/log/node_make_install.log
 is_ok
 make clean
 save_pkg_dest node
