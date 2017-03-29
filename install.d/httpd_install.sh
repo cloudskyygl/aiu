@@ -11,33 +11,33 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If HTTPD Installed ####################"
-HTTPD=`cat $AIU/install.conf | grep ^HTTPD= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $HTTPD
+is_installed httpd
 
 echo "#################### Handle Requirements ####################"
 apt_install autoconf
 $AIU/install.d/apr_install.sh
 $AIU/install.d/apr-util_install.sh
 $AIU/install.d/pcre_install.sh
-APR_SRC=`cat $AIU/install.conf | grep ^apr_src= | cut -d "=" -f 2`
+get_value apr_src;APR_SRC=$VALUE
 is_dir_exist $APR_SRC
-APR_UTIL_SRC=`cat $AIU/install.conf | grep ^apr-util_src= | cut -d "=" -f 2`
+get_value apr-util_src;APR_UTIL_SRC=$VALUE
 is_dir_exist $APR_UTIL_SRC
-APR_DEST=`cat $AIU/install.conf | grep -w ^apr_dest= | cut -d "=" -f 2`
+get_value apr_dest;APR_DEST=$VALUE
 is_dir_exist $APR_DEST
-APR_UTIL_DEST=`cat $AIU/install.conf | grep ^apr-util_dest= | cut -d "=" -f 2`
+get_value apr-util_dest;APR_UTIL_DEST=$VALUE
 is_dir_exist $APR_UTIL_DEST
-PCRE_DEST=`cat $AIU/install.conf | grep ^pcre_dest= | cut -d "=" -f 2`
+get_value pcre_dest;PCRE_DEST=$VALUE
 is_dir_exist $PCRE_DEST
 
 echo "#################### Install HTTPD ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $HTTPD
-HTTPD_SOURCE=$SRCDIR
+pre_install httpd
+HTTPD_SOURCE=$EXT_DIR
 HTTPD_SRC=$SRC/$HTTPD_SOURCE
+get_value httpd;HTTPD=$VALUE
 HTTPD_DEST=$DEST/$HTTPD
 echo "## Entering directory '$HTTPD_SRC'"
 cd $HTTPD_SRC
@@ -57,11 +57,12 @@ is_ok
 is_ok
 make
 is_ok
-make install &>$AIU/install.d/log/httpd_make_install.log
+echo $(date) > $AIU/install.d/log/httpd_make_install.log
+make install &>>$AIU/install.d/log/httpd_make_install.log
 is_ok
 make clean
-save_pkg_dest $HTTPD
+set_value httpd_dest $HTTPD_DEST
 is_ok
-echo "## Leaving directory '$HTTPD_SRC'"
+echo "## INFO: 'httpd' is installed to '$HTTPD_DEST'"
 cd $AIU
 echo "#################### HTTPD END ####################"

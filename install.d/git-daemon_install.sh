@@ -3,6 +3,8 @@
 # git-daemon-run 依赖 runit，runit 又依赖 upstart，适用于 UpStart 系统
 # git-daemon-sysvinit 顾名思义，适用于 SysV 系统
 
+echo "#################### Git Daemon BEGIN ####################"
+
 if [ -z $AIU ]; then
   AIU=$(dirname $(cd `dirname $0`;pwd))
 fi
@@ -28,13 +30,11 @@ sed -i '
 /GIT_DAEMON_USER/s/=.*/=git/
 /GIT_DAEMON_BASE_PATH/s/=.*/=\/opt\/git/
 /GIT_DAEMON_DIRECTORY/s/=.*/=\/opt\/git/
-/GIT_DAEMON_OPTIONS/s/".*"/"--reuseaddr \
---export-all \
---enable=upload-pack \
---enable=upload-archive \
---enable=receive-pack \
---informative-errors"/
+/GIT_DAEMON_OPTIONS/s/".*"/"--reuseaddr --export-all --enable=upload-pack --enable=upload-archive --enable=receive-pack --informative-errors"/
 ' /etc/default/git-daemon
+
 is_ok
 
 /etc/init.d/git-daemon restart
+
+echo "#################### Git Daemon END ####################"

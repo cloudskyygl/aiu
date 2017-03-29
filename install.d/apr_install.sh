@@ -11,17 +11,17 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If APR Installed ####################"
-APR=`cat $AIU/install.conf | grep ^APR= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $APR
+is_installed apr
 
-echo "#################### Installing APR ####################"
+echo "#################### Install APR ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $APR
-APR_SOURCE=$SRCDIR
+pre_install apr
+APR_SOURCE=$EXT_DIR
 APR_SRC=$SRC/$APR_SOURCE
+get_value apr;APR=$VALUE
 APR_DEST=$DEST/$APR
 echo "## Entering directory '$APR_SRC'"
 cd $APR_SRC
@@ -29,11 +29,12 @@ cd $APR_SRC
 is_ok
 make
 is_ok
-make install &>$AIU/install.d/log/apr_make_install.log
+echo $(date) > $AIU/install.d/log/apr_make_install.log
+make install &>>$AIU/install.d/log/apr_make_install.log
 is_ok
 make clean
-save_pkg_dest $APR
+set_value apr_dest $APR_DEST
 is_ok
-echo "## Leaving directory '$APR_SRC'"
+echo "## INFO: 'apr' is installed to '$APR_DEST'"
 cd $AIU
 echo "#################### APR END ####################"

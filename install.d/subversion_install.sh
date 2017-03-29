@@ -11,28 +11,28 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If Subversion Installed ####################"
-SUBVERSION=`cat $AIU/install.conf | grep ^SUBVERSION= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $SUBVERSION
+is_installed subversion
 
 echo "#################### Handle Subversion Requirements ####################"
-APR_DEST=`cat $AIU/install.conf | grep ^apr_dest= | cut -d "=" -f 2`
+get_value apr_dest;APR_DEST=$VALUE
 is_dir_exist $APR_DEST
-APR_UTIL_DEST=`cat $AIU/install.conf | grep ^apr-util_dest= | cut -d "=" -f 2`
+get_value apr-util_dest;APR_UTIL_DEST=$VALUE
 is_dir_exist $APR_UTIL_DEST
-HTTPD_DEST=`cat $AIU/install.conf | grep ^httpd_dest= | cut -d "=" -f 2`
+get_value httpd_dest;HTTPD_DEST=$VALUE
 is_dir_exist $HTTPD_DEST
 
 echo "#################### Install Subversion ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $SUBVERSION
-SUBVERSION_SOURCE=$SRCDIR
+pre_install subversion
+SUBVERSION_SOURCE=$EXT_DIR
 SUBVERSION_SRC=$SRC/$SUBVERSION_SOURCE
+get_value subversion;SUBVERSION=$VALUE
 SUBVERSION_DEST=$DEST/$SUBVERSION
 pre_install sqlite-amalgamation
-SQLITE_AMALGAMATION_SOURCE=$SRCDIR
+SQLITE_AMALGAMATION_SOURCE=$EXT_DIR
 mv $SQLITE_AMALGAMATION_SOURCE sqlite-amalgamation
 SQLITE_AMALGAMATION_SOURCE=sqlite-amalgamation
 mv $SQLITE_AMALGAMATION_SOURCE $SUBVERSION_SOURCE
@@ -46,11 +46,12 @@ cd $SUBVERSION_SRC
 is_ok
 make
 is_ok
-make install &>$AIU/install.d/log/subversion_make_install.log
+echo $(date) > $AIU/install.d/log/subversion_make_install.log
+make install &>>$AIU/install.d/log/subversion_make_install.log
 is_ok
 make clean
-save_pkg_dest $SUBVERSION
+set_value subversion_dest $SUBVERSION_DEST
 is_ok
-echo "## Leaving directory '$SUBVERSION_SRC'"
+echo "## INFO: 'subversion' is installed to '$SUBVERSION_DEST'"
 cd $AIU
 echo "#################### Subversion END ####################"

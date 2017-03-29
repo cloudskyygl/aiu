@@ -11,10 +11,9 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If Node Installed ####################"
-NODE=`cat $AIU/install.conf | grep ^NODE= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $NODE
+is_installed node
 
 echo "#################### Handle Requirements ####################"
 apt_install clang
@@ -22,9 +21,10 @@ apt_install clang
 echo "#################### Install Node ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $NODE
-NODE_SOURCE=$SRCDIR
+pre_install node
+NODE_SOURCE=$EXT_DIR
 NODE_SRC=$SRC/$NODE_SOURCE
+get_value node;NODE=$VALUE
 NODE_DEST=$DEST/$NODE
 echo "## Entering directory '$NODE_SRC'"
 cd $NODE_SRC
@@ -36,11 +36,12 @@ make doc
 is_ok
 ./node -e "console.log('Hello from Node.js ' + process.version)"
 is_ok
-make install &>$AIU/install.d/log/node_make_install.log
+echo $(date) > $AIU/install.d/log/node_make_install.log
+make install &>>$AIU/install.d/log/node_make_install.log
 is_ok
 make clean
-save_pkg_dest $NODE
+set_value node_dest $NODE_DEST
 is_ok
-echo "## Leaving directory '$NODE_SRC'"
+echo "## INFO: 'node' is installed to '$NODE_DEST'"
 cd $AIU
 echo "#################### NODE END ####################"

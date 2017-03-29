@@ -11,22 +11,22 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If APR-Util Installed ####################"
-APR_UTIL=`cat $AIU/install.conf | grep ^APR-UTIL= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $APR_UTIL
+is_installed apr-util
 
 echo "#################### Handle Requirements ####################"
 $AIU/install.d/apr_install.sh
-APR_DEST=`cat $AIU/install.conf | grep ^apr_dest= | cut -d "=" -f 2`
+get_value apr_dest;APR_DEST=$VALUE
 is_dir_exist $APR_DEST
 
 echo "#################### Install APR-Util ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $APR_UTIL
-APR_UTIL_SOURCE=$SRCDIR
+pre_install apr-util
+APR_UTIL_SOURCE=$EXT_DIR
 APR_UTIL_SRC=$SRC/$APR_UTIL_SOURCE
+get_value apr-util;APR_UTIL=$VALUE
 APR_UTIL_DEST=$DEST/$APR_UTIL
 echo "## Entering directory '$APR_UTIL_SRC'"
 cd $APR_UTIL_SRC
@@ -35,11 +35,12 @@ cd $APR_UTIL_SRC
 is_ok
 make
 is_ok
-make install &>$AIU/install.d/log/apr-util_make_install.log
+echo $(date) > $AIU/install.d/log/apr-util_make_install.log
+make install &>>$AIU/install.d/log/apr-util_make_install.log
 is_ok
 make clean
-save_pkg_dest $APR_UTIL
+set_value apr-util_dest $APR_UTIL_DEST
 is_ok
-echo "## Leaving directory '$APR_UTIL_SRC'"
+echo "## INFO: 'apr-util' is installed to '$APR_UTIL_DEST'"
 cd $AIU
 echo "#################### APR-Util END ####################"

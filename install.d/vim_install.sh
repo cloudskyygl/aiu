@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "#################### VIM BEGIN ####################"
 
 if [ -z $AIU ]; then
@@ -11,20 +10,20 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If VIM Installed ####################"
-VIM=`cat $AIU/install.conf | grep ^VIM | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $VIM
+is_installed vim
 
 echo "#################### Handle VIM Requirements ####################"
 apt_install libncurses5-dev
 
-echo "#################### Install Subversion ####################"
+echo "#################### Install VIM ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $VIM
-VIM_SOURCE=$SRCDIR
+pre_install vim
+VIM_SOURCE=$EXT_DIR
 VIM_SRC=$SRC/$VIM_SOURCE
+get_value vim;VIM=$VALUE
 VIM_DEST=$DEST/$VIM
 cd $VIM_SRC
 ./configure --prefix=$VIM_DEST \
@@ -37,11 +36,12 @@ cd $VIM_SRC
 is_ok
 make
 is_ok
-make install &>$AIU/install.d/log/vim_make_install.log
+echo $(date) > $AIU/install.d/log/vim_make_install.log
+make install &>>$AIU/install.d/log/vim_make_install.log
 is_ok
 make clean
-save_pkg_dest vim
+set_value vim_dest $VIM_DEST
 is_ok
-echo "## Leaving directory '$VIM_SRC'"
+echo "## INFO: 'vim' is installed to '$VIM_DEST'"
 cd $AIU
 echo "#################### VIM END ####################"

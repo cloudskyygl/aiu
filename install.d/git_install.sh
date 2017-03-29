@@ -11,10 +11,9 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If Git Installed ####################"
-GIT=`cat $AIU/install.conf | grep ^GIT= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $GIT
+is_installed git
 
 echo "#################### Handle Requirements ####################"
 apt_install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto docbook2x
@@ -22,19 +21,21 @@ apt_install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciid
 echo "#################### Install Git ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $GIT
-GIT_SOURCE=$SRCDIR
+pre_install git
+GIT_SOURCE=$EXT_DIR
 GIT_SRC=$SRC/$GIT_SOURCE
+get_value git;GIT=$VALUE
 GIT_DEST=$DEST/$GIT
 echo "## Entering directory '$GIT_SRC'"
 cd $GIT_SRC
 make all doc info prefix=$GIT_DEST
 is_ok
-make install install-doc install-html install-info install-man prefix=$GIT_DEST
+echo $(date) > $AIU/install.d/log/git_make_install.log
+make install install-doc install-html install-info install-man prefix=$GIT_DEST &>>$AIU/install.d/log/git_make_install.log
 is_ok
 make clean
-save_pkg_dest $GIT
+set_value git_dest $GIT_DEST
 is_ok
-echo "## Leaving directory '$GIT_SRC'"
+echo "## INFO: 'git' is installed to '$GIT_DEST'"
 cd $AIU
 echo "#################### Git END ####################"

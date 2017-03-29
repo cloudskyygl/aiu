@@ -1,169 +1,220 @@
-# Define  functions
-
-function is_dir_exist() {
-  if [ ! -d $1 ]; then
-    echo "## WARNING: directory '$1' not found"
+# 获取 key 对应的 value
+# 产生全局变量 VALUE
+function get_value() {
+  unset VALUE
+  if [[ -n $1 ]]; then
+    VALUE=$(cat $AIU/install.conf | grep "^$1=" | cut -d "=" -f 2)
+    if [[ -z $VALUE ]]; then
+      echo "## ERROR: No such key '$1', or no value for the key"
+      exit
+    fi
+  else
+    echo "## ERROR: Parameter not found"
     exit
   fi
 }
 
-if [ -z $DEST ]; then
-  DEST=$(cat $AIU/install.conf | grep ^DEST= | cut -d "=" -f 2)
-  is_dir_exist $DEST
-  export DEST
-fi
-
-if [ -z $SRC ]; then
-  SRC=$(cat $AIU/install.conf | grep ^SRC= | cut -d "=" -f 2)
-  is_dir_exist $SRC
-  export SRC
-fi
-
-function is_ok() {
-  status=$?
-  if [ $status -ne 0 ]; then
-    echo "## ERROR: command not executed correctly in $0"
-    exit $status
-  fi
-}
-
-# 该函数对目录的匹配有缺陷，非干净安装可能需要改进
-# 没有处理已安装多个版本和目录名称开头相同但不是同一软件包的情况
-# 例如：
-# 已不考虑，使用遍历最后一个(最新版本)： 不能区分 PKG-VERSION1.0 和 PKG-VERSION2.0
-# 可能已解决： 同样不能区分 PKG-VERSION 和 PKG-OTHERNAME-VERSION，因此要先安装 PKG 再安装 PKG-OTHERNAME
-function is_installed() {
-
-  dpkg_installed=`dpkg -l | awk '{print $2}' | grep "$1"`
-  # [] 使用 -n 判断非空无效, 而 [[]] 有效
-  if [[ -n $dpkg_installed ]]; then
-    echo "## WARNING: $1 probably installed by DPKG:"
-    for i in `dpkg -l | awk '{print $2}' | grep $1`
-    do
-      echo "DPKG: '$i'"
-    done
-  fi
-
-  # 在 $DEST 下遍历名称符合 $1[-VERSION] 的目录
-  # `ls | grep "^$1$\|$1-\?[0-9]\+"` 对版本号首位带字母的不适用
-  # for i in `ls | grep "^$1$\|$1-\?[0-9]\+"`
-  for i in $1*
-  do
-    if [ -d $i ]; then
-      # 保存符合条件的最后一个项目,也即最新版本
-      src_bin_installed=$i
-    fi
-  done
-  unset i
-
-  # 继续执行安装脚本
-  if [ -z $src_bin_installed ]; then
-    echo "## INFO: directory `pwd`/$1* not found"
-    echo "## INFO: start installing $1"
-    return 0
-  fi
-
-  # 退出安装脚本
-  echo "## WARNING: directory '`pwd`/$src_bin_installed' found"
-  echo "## INFO: stop script $0"
-  exit
-
-}
-
-function decompress() {
-  case $1 in
-    *.tar.gz)
-      tar zxf $1;;
-    *.tar.bz2)
-      tar jxf $1;;
-    *.tar.xz)
-      tar Jxf $1;;
-    *.zip)
-      unzip $1;;
+# 设置 key 对应的 value
+function set_value() {
+  local suffix=${1##*_}
+  case "$suffix" in
+    dest )
+      sed -i "/^$1=/c $1=$2" $AIU/install.conf
+      ;;
+    src )
+      sed -i "/^$1=/c $1=$SRC/$EXT_DIR" $AIU/install.conf
+      ;;
   esac
 }
 
+# 检查目录是否存在
+function is_dir_exist() {
+  if [[ ! -d $1 ]]; then
+    echo "## ERROR: Directory '$1' not found"
+    exit
+  fi
+}
+
+# AIU 变量
+function pre_aiu() {
+  if [[ -z $DEST ]]; then
+    get_value DEST; DEST=$VALUE
+    is_dir_exist $DEST
+  fi
+
+  if [[ -z $SRC ]]; then
+    get_value SRC; SRC=$VALUE
+    is_dir_exist $SRC
+  fi
+  echo -e "AIU global variables:\nDEST=$DEST\nSRC=$SRC"
+}
+
+# 检查上一个命令执行是否正常
+function is_ok() {
+  if [[ $? -ne 0 ]]; then
+    echo "## ERROR: Command $1 in '$0' not executed correctly"
+    exit
+  fi
+}
+
+# 检查软件包是否以前被 DPKG 安装
+function is_installed_dpkg() {
+  local dpkg=$(dpkg -l | awk '{print $2}' | grep $1)
+  if [[ -n $dpkg ]]; then
+    echo "## WARNING: $1 probably installed by DPKG:"
+    echo $dpkg
+    echo "## WARNING: Installations above probably cause conflicts with current installing"
+  fi
+}
+
+# 检查 DEST 下是否存在目录 pkg_dest，也即检查是否已安装
+function is_installed_src_bin() {
+  get_value $1; local pkg=$VALUE
+  if [[ -d $DEST/$pkg ]]; then
+    echo "## WARNING: Directory '$DEST/$pkg' already exists"
+    echo "## WARNING: If reinstall $1, delete '$DEST/$pkg', or change the value of key '$1' in '$AIU/install.conf'"
+    exit
+  fi
+}
+
+# APT 安装依赖
 function apt_install() {
   apt-get -y update
   apt-get -y dist-upgrade
   apt-get -y install $*
   if [ $? -ne 0 ]; then
-    echo "## ERROR: installing $* by APT occur errors"
+    echo "## ERROR: Installing $* by APT occur errors"
     exit
   fi
 }
 
-# 可能已解决： 与函数 is_installed 一样，该函数对目录的匹配有缺陷，非干净安装可能需要改进
-function pre_install() {
-
-  # for i in `ls | grep "^$1$\|$1-\?[0-9]\+"`
-  for i in $1*
-  do
-    if [ -d $i ]; then
-      echo "## INFO: delete $1 source or binary decompressed directory: '$i'"
-      rm -rf $i
+# 下载源码或二进制归档文件
+# 依赖全局变量 ARCHIVE
+function download() {
+  get_value $1_url;local url=$VALUE
+  if [[ -z $url ]]; then
+    echo "## ERROR: $1_url: missing downloading URL"
+    exit
+  fi
+  local downloaded_archive=$(basename $url)
+  echo "## INFO: Download archive '$downloaded_archive'"
+  wget $url
+  if [[ $? -ne 0 ]]; then
+    if [[ -f $downloaded_archive ]]; then
+      rm -rf $downloaded_archive
     fi
-  done
-  unset i
+    echo "## ERROR: Downloading '$downloaded_archive' occurs error"
+    exit
+  fi
+  ARCHIVE=$downloaded_archive
+}
 
-  # for file in `ls | grep "^$1$\|$1-\?[0-9]\+"`
-  for file in $1*
+# 解压缩
+# 依赖全局变量 ARCHIVE 作为解压缩文件名
+function decompress() {
+  if [[ ! -f $1 ]]; then
+    echo "## ERROR: No archive $1 found"
+    exit
+  fi
+  echo "## INFO: Decompressing archive '$SRC/$1'"
+  case $1 in
+    # *.tar.gz)
+    #   tar zxf $1;;
+    # *.tar.bz2)
+    #   tar jxf $1;;
+    # *.tar.xz)
+    #   tar Jxf $1;;
+    *.zip)
+      unzip "$1"$([[ -n "$2" ]] && echo " -d $2")
+      ;;
+    *)
+      tar -axf "$1"$([[ -n "$2" ]] && echo " -C $2")
+      ;;
+  esac
+  if [[ $? -ne 0 ]]; then
+    echo "## ERROR: Decompressing occurs error"
+  fi
+}
+
+# 获取软件包的归档文件，并保存其名称
+# 产生全局变量 ARCHIVE
+function get_archive() {
+  for file in $(ls | grep "^$1$\|^$1[[:digit:]]\+\|^$1-[vV]\?[[:digit:]]\+")
   do
-    if [ -f $file ]; then
-      getfile=$file
+    if [[ -f $file ]]; then
+      # 正常情况，在 $SRC 下每个软件包只存在一个归档文件
+      ARCHIVE=$file
+      echo "## INFO: Archive '$SRC/$ARCHIVE' found"
+      return
     fi
   done
   unset file
+}
 
-  if [ -z $getfile ]; then
-    url=`cat $AIU/install.conf | grep ^$1_url= | cut -d "=" -f 2`
-    if [ -z $url ]; then
-      echo "## ERROR: missing downloading URL"
-      exit
-    fi
-    dfile=`basename $url`
-    echo "## INFO: download $dfile"
-    wget $url
-    if [ $? -ne 0 ]; then
-      echo "## ERROR: downloading $dfile occur error"
-      if [ -f $dfile ]; then
-        rm -rf $dfile
-      fi
-      exit
-    fi
-    getfile=$dfile
-    unset dfile
-  fi
-
-  echo "## INFO: extract $getfile"
-  decompress $getfile
-  is_ok
-
-  # for dir in `ls | grep "^$1$\|$1-\?[0-9]\+"`
-  for dir in $1*
+# 正常情况，在 $SRC 下只有一个符合条件的解压缩目录
+# 产生全局变量 EXT_DIR
+# 依赖全局变量 ARCHIVE
+function get_ext_dir() {
+  unset EXT_DIR
+  for dir in $(ls | grep "^$1$\|^$1[[:digit:]]\+\|^$1-[vV]\?[[:digit:]]\+")
   do
-    if [ -d $dir ]; then
-      SRCDIR=$dir
-      echo "## $getfile extracted to directory '$SRCDIR'"
-      unset getfile
-      r=`cat $AIU/install.conf | grep ^$1_src=`
-      if [ -z $r ]; then
-        sed -i "/^# PKG_SRC$/a $1_src=$SRC/$SRCDIR" $AIU/install.conf
-      fi
-      sed -i "/^$1_src=/c $1_src=$SRC/$SRCDIR" $AIU/install.conf
-      return 0
+    if [[ -d $dir ]]; then
+      EXT_DIR=$dir
+      set_value $1_src
+      echo "## INFO: '$SRC/$ARCHIVE' is decompressed to directory '$(pwd)/$EXT_DIR'"
     fi
   done
   unset dir
-
-  echo "## ERROR: $1 source archive not found, or extracting error"
-  exit
+  if [[ -z $EXT_DIR ]]; then
+    echo "## ERROR: EXT_DIR: No such directory"
+    exit
+  fi
+  return 0
 }
 
-function save_pkg_dest() {
-  r=`cat $AIU/install.conf | grep ^$1_dest=`
-  if [ -z $r ]; then
-    sed -i "/^# PKG_DEST$/a $1_dest=$DEST/$1" $AIU/install.conf
+# 删除已解压缩的源码或二进制目录
+function delete_ext_dir() {
+  for dir in $(ls | grep "^$1$\|^$1[[:digit:]]\+\|^$1-[vV]\?[[:digit:]]\+")
+  do
+    if [[ -d $dir ]]; then
+      rm -rf $dir
+      echo "## INFO: Deleting temporary decompressed source or binary directory: $SRC/$dir"
+    fi
+  done
+  unset dir
+}
+
+# preinstall from source
+function pre_install() {
+  delete_ext_dir $1
+  get_archive $1
+  if [[ ! -f $ARCHIVE ]]; then
+    download $1
   fi
-    sed -i "/^$1_dest=/c $1_dest=$DEST/$1" $AIU/install.conf
+  decompress $ARCHIVE
+  # 最后一次使用由函数定义的全局变量后，unset 该变量。因为在多个位置赋值 ARCHIVE并各个位置互有关系，所以在使用后 unset
+  unset ARCHIVE
+  get_ext_dir $1
+}
+
+# preinstall from binary
+function preinstall_bin() {
+  get_archive $1
+  if [[ ! -f $ARCHIVE ]]; then
+    download $1
+  fi
+  decompress $ARCHIVE $2
+  echo "## INFO: Entering directory $2"
+  cd $2
+  get_ext_dir $1
+  unset ARCHIVE
+}
+
+# 设置 AIU 所需变量
+pre_aiu
+
+# 检查指定软件包是否存在已安装的实例
+function is_installed() {
+  is_installed_dpkg $1
+  is_installed_src_bin $1
 }

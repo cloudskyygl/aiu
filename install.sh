@@ -8,18 +8,24 @@
 # PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # export PATH
 
-# set base directory AIU
 AIU=$(cd `dirname $0`;pwd)
+. $AIU/install.d/functions.sh
 
-if [ -f $AIU/install.d/functions.sh ]; then
-  source $AIU/install.d/functions.sh
-fi
 
 $AIU/install.d/vim_install.sh
+is_ok
 $AIU/install.d/git_install.sh
+is_ok
+$AIU/install.d/git-daemon_install.sh
+is_ok
 $AIU/install.d/node_install.sh
+is_ok
 $AIU/install.d/httpd_install.sh
+is_ok
+$AIU/install.d/httpd_config.sh
+is_ok
 $AIU/install.d/subversion_install.sh
+is_ok
 
 # if [ -d $AIU/install.d ]; then
 #   for i in $AIU/install.d/*.sh

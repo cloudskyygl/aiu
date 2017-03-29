@@ -1,20 +1,21 @@
 #!/bin/bash
 
+echo "#################### HTTPD Configuration BEGIN ####################"
+
 if [ -z $AIU ]; then
   AIU=$(dirname $(cd `dirname $0`; pwd))
 fi
 
-HTTPD_DEST=`cat $AIU/install.conf | grep -w httpd_dest | cut -d "=" -f 2`
+HTTPD_DEST=`cat $AIU/install.conf | grep ^httpd_dest= | cut -d "=" -f 2`
 
 if [ ! -d $HTTPD_DEST ]; then
   echo "Apache is not installed by AIU"
 fi
 
-if [ -z $(cat /etc/group | grep apache) ]; then
+if [ -z $(cat /etc/group | cut -d ":" -f 1 | grep ^apache$) ]; then
   groupadd apache
 fi
-
-if [ -z $(cat /etc/passwd | grep apache) ]; then
+if [ -z $(cat /etc/passwd | cut -d ":" -f 1 | grep ^apache$) ]; then
   useradd -r -M -g apache -s /bin/false apache
 fi
 
@@ -35,3 +36,5 @@ sed -i '/<Directory ".*\/htdocs">/c <Directory "/var/www">' $HTTPD_DEST/conf/htt
 sed -i '2a ### BEGIN INIT INFO\n# Provides: Apache\n# Required-Start:\n# Required-Stop:\n# Default-Start: 3 5\n# Default-Stop: 0 1 2 4 6\n# Short-Description: start and stop Apache HTTP Server\n# Description: Apache HTTP Server is a web server.\n### END INIT INFO' $HTTPD_DEST/bin/apachectl
 ln -s $HTTPD_DEST/bin/apachectl /etc/init.d/apache
 update-rc.d apache defaults
+
+echo "#################### HTTPD Configuration END ####################"

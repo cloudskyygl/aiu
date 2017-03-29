@@ -11,17 +11,17 @@ if [ -f $AIU/install.d/functions.sh ]; then
 fi
 
 echo "#################### Check If PCRE Installed ####################"
-PCRE=`cat $AIU/install.conf | grep ^PCRE= | cut -d "=" -f 2`
 echo "## Entering directory '$DEST'"
 cd $DEST
-is_installed $PCRE
+is_installed pcre
 
 echo "#################### Install PCRE ####################"
 echo "## Entering directory '$SRC'"
 cd $SRC
-pre_install $PCRE
-PCRE_SOURCE=$SRCDIR
+pre_install pcre
+PCRE_SOURCE=$EXT_DIR
 PCRE_SRC=$SRC/$PCRE_SOURCE
+get_value pcre;PCRE=$VALUE
 PCRE_DEST=$DEST/$PCRE
 echo "## Entering directory '$PCRE_SRC'"
 cd $PCRE_SRC
@@ -29,11 +29,12 @@ cd $PCRE_SRC
 is_ok
 make
 is_ok
-make install &>$AIU/install.d/log/pcre_make_install.log
+echo $(date) > $AIU/install.d/log/pcre_make_install.log
+make install &>>$AIU/install.d/log/pcre_make_install.log
 is_ok
 make clean
-save_pkg_dest $PCRE
+set_value pcre_dest $PCRE_DEST
 is_ok
-echo "## Leaving directory '$PCRE_SRC'"
+echo "## INFO: 'pcre' is installed to '$PCRE_DEST'"
 cd $AIU
 echo "#################### PCRE END ####################"
