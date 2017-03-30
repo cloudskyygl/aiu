@@ -35,7 +35,7 @@ function is_dir_exist() {
   fi
 }
 
-# AIU 变量
+# 初始化 AIU
 function pre_aiu() {
   if [[ -z $DEST ]]; then
     get_value DEST; DEST=$VALUE
@@ -47,6 +47,10 @@ function pre_aiu() {
     is_dir_exist $SRC
   fi
   echo -e "AIU global variables:\nDEST=$DEST\nSRC=$SRC"
+  if [[ ! -f /etc/profile.d/custom.sh ]]; then
+    touch /etc/profile.d/custom.sh
+    ENVVARS=/etc/profile.d/custom.sh
+  fi
 }
 
 # 检查上一个命令执行是否正常
@@ -98,7 +102,11 @@ function download() {
   fi
   local downloaded_archive=$(basename $url)
   echo "## INFO: Download archive '$downloaded_archive'"
-  wget $url
+  if [[ $1 = "jdk" ]]; then
+    wget --no-cookie --header "Cookie: oraclelicense=accept-securebackup-cookie" $url
+  else
+    wget $url
+  fi
   if [[ $? -ne 0 ]]; then
     if [[ -f $downloaded_archive ]]; then
       rm -rf $downloaded_archive
@@ -139,7 +147,7 @@ function decompress() {
 # 获取软件包的归档文件，并保存其名称
 # 产生全局变量 ARCHIVE
 function get_archive() {
-  for file in $(ls | grep "^$1$\|^$1[[:digit:]]\+\|^$1-[vV]\?[[:digit:]]\+")
+  for file in $(ls | grep "^$1$\|$1[[:digit:]]\+\|$1-[vV]\?[[:digit:]]\+")
   do
     if [[ -f $file ]]; then
       # 正常情况，在 $SRC 下每个软件包只存在一个归档文件
@@ -156,11 +164,28 @@ function get_archive() {
 # 依赖全局变量 ARCHIVE
 function get_ext_dir() {
   unset EXT_DIR
-  for dir in $(ls | grep "^$1$\|^$1[[:digit:]]\+\|^$1-[vV]\?[[:digit:]]\+")
+  for dir in $(ls | grep "^$1$\|$1[[:digit:]]\+\|$1-[vV]\?[[:digit:]]\+")
   do
     if [[ -d $dir ]]; then
       EXT_DIR=$dir
       set_value $1_src
+      echo "## INFO: '$SRC/$ARCHIVE' is decompressed to directory '$(pwd)/$EXT_DIR'"
+    fi
+  done
+  unset dir
+  if [[ -z $EXT_DIR ]]; then
+    echo "## ERROR: EXT_DIR: No such directory"
+    exit
+  fi
+  return 0
+}
+function get_ext_dir_bin() {
+  unset EXT_DIR
+  for dir in $(ls | grep "^$1$\|$1[[:digit:]]\+\|$1-[vV]\?[[:digit:]]\+")
+  do
+    if [[ -d $dir ]]; then
+      EXT_DIR=$dir
+      # set_value $1_src
       echo "## INFO: '$SRC/$ARCHIVE' is decompressed to directory '$(pwd)/$EXT_DIR'"
     fi
   done
@@ -206,11 +231,11 @@ function preinstall_bin() {
   decompress $ARCHIVE $2
   echo "## INFO: Entering directory $2"
   cd $2
-  get_ext_dir $1
+  get_ext_dir_bin $1
   unset ARCHIVE
 }
 
-# 设置 AIU 所需变量
+# 执行初始化 AIU
 pre_aiu
 
 # 检查指定软件包是否存在已安装的实例

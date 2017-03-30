@@ -26,14 +26,14 @@ MYSQL_BINARY=$EXT_DIR
 get_value mysql;MYSQL=$VALUE
 mv $MYSQL_BINARY $MYSQL
 MYSQL_DEST=$DEST/$MYSQL
-## create group and user for running mysql
-# if [[ -z $(cat /etc/group | cut -d ":" -f 1 | grep "^mysql$") ]]; then
-#   groupadd mysql
-# fi
-# if [[ -z $(cat /etc/passwd | cut -d ":" -f 1 | grep "^mysql$") ]]; then
-#   useradd -r -M -g mysql -s /bin/false mysql
-# fi
-## configure file etc/my.cnf and directory mysql-files
+# create group and user for running mysql
+if [[ -z $(cat /etc/group | cut -d ":" -f 1 | grep "^mysql$") ]]; then
+  groupadd mysql
+fi
+if [[ -z $(cat /etc/passwd | cut -d ":" -f 1 | grep "^mysql$") ]]; then
+  useradd -r -M -g mysql -s /bin/false mysql
+fi
+# configure file etc/my.cnf and directory mysql-files
 echo "## INFO: Entering directory $MYSQL_DEST"
 cd $MYSQL_DEST
 mkdir etc
@@ -60,3 +60,5 @@ echo "PATH=$PATH:$MYSQL_DEST/bin" >> /etc/profile.d/custom.sh
 # configure as system service
 ln -s $MYSQL_DEST/support-files/mysql.server /etc/init.d/mysql
 update-rc.d mysql defaults
+
+set_value "mysql_dest" $MYSQL_DEST
