@@ -62,3 +62,4 @@ ln -s $MYSQL_DEST/support-files/mysql.server /etc/init.d/mysql
 update-rc.d mysql defaults
 
 set_value "mysql_dest" $MYSQL_DEST
+echo "#################### MySQL END ####################"

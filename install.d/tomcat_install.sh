@@ -56,3 +56,4 @@ update-rc.d tomcat defaults
 update-rc.d tomcat disable
 
 set_value "tomcat_dest" $TOMCAT_DEST
+echo "#################### Tomcat END ####################"
