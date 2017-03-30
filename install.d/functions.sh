@@ -49,8 +49,8 @@ function pre_aiu() {
   echo -e "AIU global variables:\nDEST=$DEST\nSRC=$SRC"
   if [[ ! -f /etc/profile.d/custom.sh ]]; then
     touch /etc/profile.d/custom.sh
-    ENVVARS=/etc/profile.d/custom.sh
   fi
+  ENVVARS=/etc/profile.d/custom.sh
 }
 
 # 检查上一个命令执行是否正常
@@ -83,8 +83,8 @@ function is_installed_src_bin() {
 
 # APT 安装依赖
 function apt_install() {
-  apt-get -y update
-  apt-get -y dist-upgrade
+  # apt-get -y update
+  # apt-get -y dist-upgrade
   apt-get -y install $*
   if [ $? -ne 0 ]; then
     echo "## ERROR: Installing $* by APT occur errors"

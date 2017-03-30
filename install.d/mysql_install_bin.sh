@@ -45,8 +45,7 @@ chmod 750 mysql-files etc
 chown -R mysql .
 chgrp -R mysql .
 ## initialize mysql
-# bin/mysqld --defaults-file=$MYSQL_DEST/etc/my.cnf \
-bin/mysqld \
+bin/mysqld --defaults-file=$MYSQL_DEST/etc/my.cnf \
 --initialize-insecure \
 --user=mysql
 bin/mysql_ssl_rsa_setup
@@ -54,12 +53,15 @@ chown -R root .
 chown -R mysql data mysql-files
 ## start mysql by running background
 bin/mysqld_safe --defaults-file=$MYSQL_DEST/etc/my.cnf --user=mysql &
-# set mysql environment variables
-echo -e '\n# mysql' >> /etc/profile.d/custom.sh
-echo "PATH=$PATH:$MYSQL_DEST/bin" >> /etc/profile.d/custom.sh
 # configure as system service
 ln -s $MYSQL_DEST/support-files/mysql.server /etc/init.d/mysql
 update-rc.d mysql defaults
-
+# set mysql environment variables
+MYSQL_HOME=$(cat $ENVVARS | grep "^export MYSQL_HOME=")
+if [[ -z $MYSQL_HOME ]]; then
+  echo -e '\n# mysql' >> $ENVVARS
+  echo "export MYSQL_HOME=$MYSQL_DEST" >> $ENVVARS
+  echo 'export PATH=$PATH:/$MYSQL_HOME/bin' >> $ENVVARS
+fi
 set_value "mysql_dest" $MYSQL_DEST
 echo "#################### MySQL END ####################"

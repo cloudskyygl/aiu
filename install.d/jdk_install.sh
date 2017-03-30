@@ -24,7 +24,7 @@ get_value "jdk";JDK=$VALUE
 mv $JDK_BINARY $JDK
 JDK_DEST=$DEST/$JDK
 set_value "jdk_dest" $JDK_DEST
-JAVA_HOME=$(cat /etc/profile.d/custom.sh | grep "^export JAVA_HOME=")
+JAVA_HOME=$(cat $ENVVARS | grep "^export JAVA_HOME=")
 if [[ -z $JAVA_HOME ]]; then
   echo -e '\n# java' >> $ENVVARS
   echo "export JAVA_HOME=$JDK_DEST" >> $ENVVARS

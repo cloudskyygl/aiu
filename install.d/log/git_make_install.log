@@ -1,4 +1,4 @@
-Wed Mar 29 01:33:50 CST 2017
+Fri Mar 31 02:28:20 CST 2017
     SUBDIR perl
 /usr/bin/perl Makefile.PL PREFIX='/home/steven/dest/git' INSTALL_BASE='' --localedir='/home/steven/dest/git/share/locale'
 Generating a Unix-style perl.mak
@@ -14,19 +14,19 @@ Writing MYMETA.yml and MYMETA.json
     SUBDIR git-gui
     SUBDIR gitk-git
     SUBDIR perl
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Utils.pm >blib/lib/Git/SVN/Utils.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Prompt.pm >blib/lib/Git/SVN/Prompt.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git.pm >blib/lib/Git.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Log.pm >blib/lib/Git/SVN/Log.pm
 "/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Memoize/YAML.pm >blib/lib/Git/SVN/Memoize/YAML.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/I18N.pm >blib/lib/Git/I18N.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Migration.pm >blib/lib/Git/SVN/Migration.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git.pm >blib/lib/Git.pm
 "/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN.pm >blib/lib/Git/SVN.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Utils.pm >blib/lib/Git/SVN/Utils.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Ra.pm >blib/lib/Git/SVN/Ra.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Log.pm >blib/lib/Git/SVN/Log.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Fetcher.pm >blib/lib/Git/SVN/Fetcher.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Editor.pm >blib/lib/Git/SVN/Editor.pm
+"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Prompt.pm >blib/lib/Git/SVN/Prompt.pm
 "/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/GlobSpec.pm >blib/lib/Git/SVN/GlobSpec.pm
 "/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/IndexInfo.pm >blib/lib/Git/IndexInfo.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Migration.pm >blib/lib/Git/SVN/Migration.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Editor.pm >blib/lib/Git/SVN/Editor.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Fetcher.pm >blib/lib/Git/SVN/Fetcher.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/SVN/Ra.pm >blib/lib/Git/SVN/Ra.pm
-"/usr/bin/perl" -pe "s<\Q++LOCALEDIR++\E></home/steven/dest/git/share/locale>" <Git/I18N.pm >blib/lib/Git/I18N.pm
 Manifying 8 pod documents
     SUBDIR templates
 install -d -m 755 '/home/steven/dest/git/bin'

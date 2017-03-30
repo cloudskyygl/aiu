@@ -24,7 +24,7 @@ get_value "maven";MAVEN=$VALUE
 mv $MAVEN_BINARY $MAVEN
 MAVEN_DEST=$DEST/$MAVEN
 set_value "maven_dest" $MAVEN_DEST
-MAVEN_HOME=$(cat /etc/profile.d/custom.sh | grep "^export MAVEN_HOME=")
+MAVEN_HOME=$(cat $ENVVARS | grep "^export MAVEN_HOME=")
 if [[ -z $MAVEN_HOME ]]; then
   echo -e '\n# maven' >> $ENVVARS
   echo "export MAVEN_HOME=$MAVEN_DEST" >> $ENVVARS
